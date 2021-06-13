@@ -11,8 +11,6 @@ show(dados)
 #Matrizes 2x2 de comparação Masculino vs Feminino por periodo:
 
 
-ARC <- matrix(c(31,12,100,111), nr=2, dimnames = list(c("masculino", "feminino"),
-                                                      c("afetado", "não afetado")))
 fisher.test(ARC)
 
 F <- matrix(c(38,8,115,127), nr=2,  dimnames = list(c("masculino", "feminino"),
