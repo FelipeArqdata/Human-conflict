@@ -9,14 +9,17 @@
 #Realizando teste Fisher no arquivo 'Fisher.test.xlsx' em todas as observa????es, para comparar propor????o de ocorr??ncia de traumas entre os sexos.
 #As vari??veis consideradas para formar a tabela de conting??ncia foram as 'afetado' e 'n??o afetado' para ambos os sexos.
 
-
 #install.packages('xlsx')
 library(xlsx)
-teste <- read.xlsx(file.choose(),1, colIndex = c(5,6,9,10))
-p_valores <- apply(teste,1, function(x) fisher.test(matrix(x,nr=2))$p.value)
-View(p_valores)
+dados_test<- read.xlsx(file.choose(), 1)
+View(dados_test)
+teste <- read.xlsx(file.choose(),1, colIndex = c(6,7,10,11))
 View(teste)
-View(p_valores)
+test_resultado <- apply(teste,1, function(x) fisher.test(matrix(x,nr=2)))
+View(test_resultado)
+View(test_resultado)
+
+test_resultad[[5]]
 
 #Realizando MCA nos dados do Arquivo 'ACM.xlsx', o arquivo cont??m os dados bin??rios (sim/n??o) obtido dos p-valores do teste feito anteriormente
 #sim = <0,05, n??o = >0,05. A ideia da an??lise ?? representar graficamente a rela????o entre per??odo de ocupa????o, regi??o geogr??fica com a presen??a ou aus??ncia de signific??ncia na compara????o dos traumas entre os sexos. 
