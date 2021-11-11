@@ -1,0 +1,368 @@
+valley,site,tomb,unique_ID,period,sex,probable_sex ,dimorphism_index,age_categ,peri-mortem,#_peri,overkill,anterior/posterior ,facial,facial_sector,parietal,parietal_sector,temporal,temporal_sector,occipital,occipital_sector,ante-mortem,#_ante,anterior/posterior ,facial,facial_sector,parietal,parietal_sector,temporal,temporal_sectr,occipital,sum_traumas,trauma,critical_trauma,AMS Subset,valley,site,tomb,unique_ID,mod_cranium,mod_style,C14_RangeBP,Cal_medianBP,C14_RangeAD,main_period,phase
+Aja,Ayaorcco,C1,Cr1,LIP,Female,,8,Middle Adult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,Aja,Ayaorcco,C1,Cr1,Y,AO,717 - 672    ,692,1233 - 1278,LIP,PII
+Aja,Ayaorcco,C1,Cr2,LIP,Ind,,NA,Child,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,Aja,Ayaorcco,C1,Cr2,Y,AO,629 - 556     ,608,1321 - 1395,LIP,PIII
+Aja,Ayaorcco,C1,Cr3,LIP,Female,,5,Young Adult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,Aja,Ayaorcco,C1,Cr3,Y,AO,651 - 566     ,601,1268 - 1385,LIP,PIII
+Aja,Ayaorcco,C1,Cr4,LIP,Female,,8,Middle Adult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,Aja,Ayaorcco,C1,Cr5,Y,AO,717 - 663    ,681,1211 - 1277,LIP,PII
+Aja,Ayaorcco,C1,Cr5,LIP,Male,,14,Middle Adult,N,0,N,,,,,,,,,,Y,1,A,X,L,,,,,,1,Y,N,,Aja,Ayaorcco,C1,Cr8,Y,AO,679 - 662,672,1271 - 1288,LIP,PII
+Aja,Ayaorcco,C1,Cr6,LIP,Female,,5,Middle Adult,N,0,N,,,,,,,,,,Y,1,P,,,X,L,,,,1,Y,Y,,Aja,Ayaorcco,C1,Cr10,Y,AO,675 - 660,668,1275 - 1290,LIP,PII
+Aja,Ayaorcco,C1,Cr7,LIP,Ind,,10,Middle Adult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,Aja,Ayaorcco,C1,Cr11,Y,AO,629 - 556,608,1321 - 1394,LIP,PIII
+Aja,Ayaorcco,C1,Cr8,LIP,Female,,4,Young Adult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,Aja,Ayaorcco,C1,Cr14,Y,AO,719 - 672,694,1231 - 1278,LIP,PII
+Aja,Ayaorcco,C1,Cr9,LIP,Male,,17,Middle Adult,N,0,N,,,,,,,,,,Y,1,A,X,,,,,,,1,Y,N,,Aja,Ayaorcco,C1,Cr15,Y,AO,721 - 684,704,1229 - 1266,LIP,PII
+Aja,Ayaorcco,C1,Cr10,LIP,Female,,4,Young Adult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,Aja,Ayaorcco,C1,Cr16,N,NA,650 - 566,599,1300 - 1384,LIP,PIII
+Aja,Ayaorcco,C1,Cr11,LIP,Male,,19,Middle Adult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,Aja,Ayaorcco,C1,Cr17,NA,NA,644 - 560   ,605,1275 - 1390,LIP,PIII
+Aja,Ayaorcco,C1,Cr12,LIP,Male,,15,Old Adult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,Aja,Ayaorcco,C1,Cr19,Y,AO,667 - 577     ,655,1283 - 1373,LIP,PIII
+Aja,Ayaorcco,C1,Cr13,LIP,Male,,14,Middle Adult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,Aja,Ayaorcco,C1,Cr22,Y,AO,672 - 579    ,659,1278 - 1371,LIP,PIII
+Aja,Ayaorcco,C1,Cr14,LIP,Ind,,13,Middle Adult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,Aja,Ayaorcco,C1,Cr29,Y,AO,553 - 540   ,547,1397 - 1410,LIP,PIII
+Aja,Ayaorcco,C1,Cr15,LIP,Male,,15,Old Adult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,Aja,Ayaorcco,C1,Cr30,Y,AO,641- 560     ,604,1309 - 1390,LIP,PIII
+Aja,Ayaorcco,C1,Cr16,LIP,Male,,15,Old Adult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,Aja,Ayaorcco,C2,Cr31,Y,AO,620 - 542     ,554,1330 - 1408,LIP,PIII
+Aja,Ayaorcco,C1,Cr17,LIP,Female,,9,Young Adult,Y,3,Y,P,,,X,L,,,,,N,0,,,,,,,,,3,Y,Y,,Aja,Ayaorcco,C2,Cr32,Y,AO,555 - 536   ,547,1395 - 1414,LIP,PIII
+Aja,Ayaorcco,C1,Cr18,LIP,Male,,16,Middle Adult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,Aja,Ayaorcco,C2,Cr33,Y,AO,620 - 538,552,1330 - 1412,LIP,PIII
+Aja,Ayaorcco,C1,Cr19,LIP,Female,,6,Young Adult,N,0,N,,,,,,,,,,Y,1,A,X,R,,,,,,1,Y,N,,Aja,Ayaorcco,C2,Cr34,Y,AO,633 - 559     ,607,1317 - 1391,LIP,PIII
+Aja,Ayaorcco,C1,Cr20,LIP,Female,,6,Middle Adult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,Aja,Ayaorcco,C2,Cr35,N,NA,629 - 558     ,609,1321 - 1392,LIP,PIII
+Aja,Ayaorcco,C1,Cr21,LIP,Female,,6,Young Adult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,Aja,Ayaorcco,C2,Cr36,N,NA,659 - 572  ,632,1291 - 1378,LIP,PIII
+Aja,Ayaorcco,C1,Cr22,LIP,Ind,,NA,Adolescent,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,Aja,Ayaorcco,C2,Cr37,Y,AO,508 - 474      ,494,1415 - 1454,LIP,PIII
+Aja,Ayaorcco,C1,Cr23,LIP,Female,,7,Middle Adult,N,0,N,,,,,,,,,,Y,2,PA,X,L,,,,,X,2,Y,N,,Aja,Ayaorcco,C2,Cr40,Y,AO,631 - 558 ,607,1319 - 1392,LIP,PIII
+Aja,Ayaorcco,C1,Cr24,LIP,Female,,9,Young Adult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,Aja,Ayaorcco,C2,Cr41,Y,AO,625 - 547,589,1325 - 1403,LIP,PIII
+Aja,Ayaorcco,C1,Cr25,LIP,Male,,15,Middle Adult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,Aja,Ayaorcco,C2,Cr44,Y,AO,630 - 559   ,608,1320 - 1391,LIP,PIII
+Aja,Ayaorcco,C1,Cr26,LIP,Ind,,NA,Child,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,Aja,Ayaorcco,C2,Cr45,Y,AO,720 - 682    ,703,1230 - 1271,LIP,PII
+Aja,Ayaorcco,C1,Cr27,LIP,Female,,9,Young Adult,N,0,N,A,X,,,,,,,,N,0,,,,,,,,,0,N,N,,Aja,Ayaorcco,C3,Cr49,Y,AO,720 - 679    ,702,1230 - 1271,LIP,PII
+Aja,Ayaorcco,C1,Cr28,LIP,Female,,NA,Young Adult,Y,1,N,A,X,LR,,,,,,,N,0,,,,,,,,,1,Y,Y,,Aja,Ayaorcco,C3,Cr50,Y,AO,764 - 728    ,743,1186 - 1222,LIP,PII
+Aja,Ayaorcco,C1,Cr29,LIP,Female,,7,Young Adult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,Aja,Ayaorcco,C3,Cr52,Y,AO,663 - 572     ,637,1258 - 1296,LIP,PII
+Aja,Ayaorcco,C1,Cr30,LIP,Male,,14,Young Adult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,Aja,Ayaorcco,C3,Cr54,Y,AO,736 - 686  ,718,1214 - 1264,LIP,PII
+Aja,Ayaorcco,C2,Cr31,LIP,Male,,NA,Adolescent,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,Aja,Ayaorcco,C3,Cr55,Y,AO,712 - 663,677,1238 - 1287,LIP,PII
+Aja,Ayaorcco,C2,Cr32,LIP,Male,,NA,Adolescent,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,Aja,Ayaorcco,C3,Cr58,Y,AO,721 - 684    ,704,1229 - 1266,LIP,PII
+Aja,Ayaorcco,C2,Cr33,LIP,Ind,,13,Middle Adult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,Aja,Ayaorcco,C3,Cr63,Y,AO,648 - 565    ,598,1302 - 1385,LIP,PIII
+Aja,Ayaorcco,C2,Cr34,LIP,Male,,14,Middle Adult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,Aja,Ayaorcco,C3,Cr65,Y,AO,747 - 688   ,729,1203 - 1262,LIP,PII
+Aja,Ayaorcco,C2,Cr35,LIP,Male,,NA,Adolescent,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,Aja,Ayaorcco,C3,Cr68,Y,AO,747 - 688     ,729,1203 - 1262,LIP,PII
+Aja,Ayaorcco,C2,Cr36,LIP,Female,,8,Adolescent,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,Aja,Ayaorcco,C3,Cr69,Y,AO,768 - 734     ,754,1182 - 1216,LIP,PI
+Aja,Ayaorcco,C2,Cr37,LIP,Ind,,8,Middle Adult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,Aja,Ayaorcco,C3,Cr71,Y,AO,720 - 679   ,702,1230 - 1271,LIP,PII
+Aja,Ayaorcco,C2,Cr38,LIP,Male,probable ,12,Middle Adult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,Aja,Ayaorcco,C3,Cr73,Y,AO,786 - 735    ,760,1040 - 1206,LIP,PI
+Aja,Ayaorcco,C2,Cr39,LIP,Male,,14,Middle Adult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,Aja,Ayaorcco,C3,Cr74,Y,AO,720 - 677   ,700,1130 - 1273,LIP,PII
+Aja,Ayaorcco,C2,Cr40,LIP,Female,,15,Young Adult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,Aja,Ayaorcco,C3,Cr76,Y,AO,903 - 795    ,864,1047 - 1155,LIP,PI
+Aja,Ayaorcco,C2,Cr41,LIP,Male,,NA,Adolescent,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,Aja,Ayaorcco,C4,Cr77,Y,AO,627 - 553 ,608,1256 - 1294,LIP,PII
+Aja,Ayaorcco,C2,Cr42,LIP,Female,,8,Old Adult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,Aja,Ayaorcco,C4,Cr79,Y,AO,792 - 750 ,772,1158 - 1200,LIP,PI
+Aja,Ayaorcco,C2,Cr43,LIP,Female,,6,Middle Adult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,Aja,Ayaorcco,C4,Cr80,Y,AO,665 - 575     ,651,1285 - 1375,LIP,PIII
+Aja,Ayaorcco,C2,Cr44,LIP,Ind,,12,Old Adult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,Aja,Ayaorcco,C4,Cr81,N,NA,739 - 689     ,725,1211 - 1261,LIP,PII
+Aja,Ayaorcco,C2,Cr45,LIP,Male,,7,Adolescent,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,Aja,Ayaorcco,C4,Cr82,N,NA,747 - 688   ,729,1203 - 1262,LIP,PII
+Aja,Ayaorcco,C2,Cr46,LIP,Female,probable ,11,Middle Adult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,Aja,Ayaorcco,C4,Cr83,Y,AO,651 - 568 ,598,1299 - 1382,LIP,PIII
+Aja,Ayaorcco,C2,Cr47,LIP,Female,,9,Adolescent,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,Tierras Blancas,Ayapata,C1,Cr84,Y,AO,625 - 543     ,656,1295 - 1399,LIP,PIII
+Aja,Ayaorcco,C3,Cr48,LIP,Ind,,11,Old Adult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,Tierras Blancas,Ayapata,C1,Cr85,Y,AO,641 - 560    ,604,1309 - 1390,LIP,PIII
+Aja,Ayaorcco,C3,Cr49,LIP,Female,,8,Middle Adult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,Tierras Blancas,Ayapata,C1,Cr86,Y,AO,647 - 560   ,605,1272 - 1391,LIP,PIII
+Aja,Ayaorcco,C3,Cr50,LIP,Male,,15,Young Adult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,Tierras Blancas,Ayapata,C1,Cr88,Y,AO,639 - 560     ,604,1311 - 1390,LIP,PIII
+Aja,Ayaorcco,C3,Cr51,LIP,Male,,15,Young Adult,N,0,N,,,,,,,,,,Y,1,P,X,L,,,,,,1,Y,N,,Tierras Blancas,Ayapata,C1,Cr89,Y,AO,633 - 559    ,607,1317 - 1391,LIP,PIII
+Aja,Ayaorcco,C3,Cr52,LIP,Female,,7,Young Adult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,Tierras Blancas,Ayapata,C1,Cr90,Y,AO,646 - 561   ,603,1304 - 1389,LIP,PIII
+Aja,Ayaorcco,C3,Cr53,LIP,Female,,6,Old Adult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,Tierras Blancas,Ayapata,C1,Cr91,Y,AO,635 - 559   ,605,1315 - 1391,LIP,PIII
+Aja,Ayaorcco,C3,Cr54,LIP,Ind,,9,Middle Adult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,Tierras Blancas,Ayapata,C1,Cr92,Y,AO,653 - 569    ,598,1297 - 1381,LIP,PIII
+Aja,Ayaorcco,C3,Cr55,LIP,Male,,17,Young Adult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,Tierras Blancas,Ayapata,C1,Cr93,Y,AO,657 - 571    ,602,1293 - 1379,LIP,PIII
+Aja,Ayaorcco,C3,Cr56,LIP,Male,,15,Middle Adult,N,0,N,,,,,,,,,,Y,2,AP,X,R,X,R,,,X,2,Y,Y,,Tierras Blancas,Ayapata,C1,Cr97,Y,AO,635 - 559   ,605,1315 - 1391,LIP,PIII
+Aja,Ayaorcco,C3,Cr57,LIP,Male,,15,Middle Adult,Y,1,N,P,,,X,L,,,,,N,0,,,,,,,,,1,Y,Y,,Tierras Blancas,Ayapata,C1,Cr98,Y,AO,668 - 575    ,652,1282 - 1375,LIP,PIII
+Aja,Ayaorcco,C3,Cr58,LIP,Female,,6,Adolescent,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,Tierras Blancas,Ayapata,C1,Cr99,Y,AO,662 - 573  ,638,1288 - 1377,LIP,PIII
+Aja,Ayaorcco,C3,Cr59A,LIP,Male,probable ,11,Young Adult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,Tierras Blancas,Ayapata,C1,Cr102,Y,AO,627 - 555      ,610,1323 - 1395,LIP,PIII
+Aja,Ayaorcco,C3,Cr59B,LIP,Ind,,12,Middle Adult,N,0,N,,,,,,,,,,Y,1,P,,,X,L,,,,1,Y,N,,Tierras Blancas,Ayapata,C1,Cr104,Y,AO,681 - 662      ,674,1269 - 1288,LIP,PII
+Aja,Ayaorcco,C3,Cr60,LIP,Female,,6,Middle Adult,N,0,N,,,,,,,,,,Y,2,A,XX,"R,R",,,,,,2,Y,N,,Tierras Blancas,Ayapata,C2,Cr105,Y,AO,652 - 565   ,603,1266 - 1387,LIP,PIII
+Aja,Ayaorcco,C3,Cr61,LIP,Female,,8,Middle Adult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,Tierras Blancas,Ayapata,C2,Cr110,Y,AO,654 - 571 ,596,1296 - 1379,LIP,PIII
+Aja,Ayaorcco,C3,Cr62,LIP,Ind,,NA,Child,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,Tierras Blancas,Ayapata,C2,Cr115,N,NA,653 - 569     ,598,1297 - 1381,LIP,PIII
+Aja,Ayaorcco,C3,Cr63,LIP,Female,,4,Young Adult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,Tierras Blancas,Ayapata,C2,Cr117,Y,AO,627 - 546      ,601,1291 - 1398,LIP,PIII
+Aja,Ayaorcco,C3,Cr64,LIP,Ind,,NA,Adolescent,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,Tierras Blancas,Ayapata,C2,Cr121,Y,AO,765 - 731,747,1185 - 1219,LIP,PI
+Aja,Ayaorcco,C3,Cr65,LIP,Male,,19,Old Adult,N,0,N,,,,,,,,,,Y,2,A,X,R,X,L,,,,2,Y,N,,Tierras Blancas,Ayapata,C2,Cr128,N,NA,664 - 573 ,642,1286 - 1377,LIP,PIII
+Aja,Ayaorcco,C3,Cr66,LIP,Female,,7,Middle Adult,N,0,N,,,,,,,,,,Y,1,P,,,X,L,,,,1,Y,N,,Tierras Blancas,Ayapata,C2,Cr133,Y,AE,632 - 560      ,607,1318 - 1390,LIP,PIII
+Aja,Ayaorcco,C3,Cr67,LIP,Female,,8,Middle Adult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,Tierras Blancas,Ayapata,C2,Cr139,Y,AO,647 - 563    ,600,1303 - 1387,LIP,PIII
+Aja,Ayaorcco,C3,Cr68,LIP,Female,,8,Young Adult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,Tierras Blancas,Ayapata,C2,Cr140,Y,AO,710 - 666    ,678,1240 - 1284,LIP,PII
+Aja,Ayaorcco,C3,Cr69,LIP,Male,,17,Young Adult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,Tierras Blancas,Ayapata,C2,Cr142,Y,AO,649 - 564     ,600,1301 - 1386,LIP,PIII
+Aja,Ayaorcco,C3,Cr70,LIP,Male,,15,Middle Adult,Y,1,Y,A,,,X,L,,,,,N,0,,,,,,,,,1,Y,Y,,Tierras Blancas,Ayapata,C2,Cr144,Y,AO,628 - 554    ,608,1322 - 1396,LIP,PIII
+Aja,Ayaorcco,C3,Cr71,LIP,Female,,8,Middle Adult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,Tierras Blancas,Ayapata,C2,Cr145,Y,AO,630 - 557      ,608,1320 - 1393,LIP,PIII
+Aja,Ayaorcco,C3,Cr72,LIP,Male,,17,Middle Adult,N,0,N,,,,,,,,,,Y,2,A,"X,X","R,R",,,,,,2,Y,N,,Tierras Blancas,Ayapata,C2,Cr151,Y,AO,649 - 564      ,600,1301 - 1386,LIP,PIII
+Aja,Ayaorcco,C3,Cr73,LIP,Male,,16,Old Adult,Y,1,N,A,,,X,L,,,,,N,0,,,,,,,,,1,Y,Y,,Tierras Blancas,Ayapata,C2,Cr156,Y,AO,674 - 658    ,666,1276 - 1292,LIP,PII
+Aja,Ayaorcco,C3,Cr74,LIP,Male,,16,Middle Adult,N,0,N,,,,,,,,,,Y,1,P,,,X,R,,,,1,Y,N,,Tierras Blancas,Ayapata,C2,158A,NA,NA,661 - 573   ,640,1289 - 1377,LIP,PIII
+Aja,Ayaorcco,C3,Cr75,LIP,Ind,,11,Old Adult,N,0,N,,,,,,,,,,Y,1,A,X,R,,,,,,1,Y,N,,Tierras Blancas,Ayapata,C2,158D,NA,NA,681 - 666     ,675,1269 - 1284,LIP,PII
+Aja,Ayaorcco,C3,Cr76,LIP,Male,probable ,12,Young Adult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,Tierras Blancas,Ayapata,C2,158H,NA,NA,534 - 517     ,526,1416 - 1433,LIP,PIII
+Aja,Ayaorcco,C4,Cr77,LIP,Female,,8,Young Adult,Y,2,Y,P,,,X,L,,,"X,X",,Y,1,P,,,X,R,,,,3,Y,Y,,Tierras Blancas,Ayapata,C2,158J,NA,NA,550 - 536      ,543,1400 - 1414,LIP,PIII
+Aja,Ayaorcco,C4,Cr78,LIP,Female,,6,Middle Adult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,Tierras Blancas,Ayapata,C2,158N,NA,NA,673 - 662     ,668,1277 - 1288,LIP,PII
+Aja,Ayaorcco,C4,Cr79,LIP,Male,,14,Old Adult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,Tierras Blancas,Ayapata,C3,Cr159,Y,AO,557 - 536 ,549,1393 - 1414,LIP,PIII
+Aja,Ayaorcco,C4,Cr80,LIP,Female,,6,Young Adult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,Tierras Blancas,Ayapata,C3,Cr160,Y,AO,631 - 549    ,603,1285 - 1398,LIP,PIII
+Aja,Ayaorcco,C4,Cr81,LIP,Male,,14,Old Adult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,Tierras Blancas,Ayapata,C3,Cr161,N,NA,657 - 570   ,606,1262 - 1381,LIP,PIII
+Aja,Ayaorcco,C4,Cr82,LIP,Ind,,10,Middle Adult,N,0,N,,,,,,,,,,Y,1,P,,,X,R,,,,1,Y,N,,Tierras Blancas,Ayapata,C3,Cr162,Y,AO,630 - 559  ,608,1320 - 1391,LIP,PIII
+Aja,Ayaorcco,C4,Cr83,LIP,Female,,4,Young Adult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,Tierras Blancas,Ayapata,C3,Cr166,N,NA,633 - 554      ,606,1279 - 1394,LIP,PIII
+Tierras Blancas,Ayapata,C1,Cr84,LIP,Female,,8,Adolescent,Y,3,N,P,,,"X, X, X","L, R,  R",X,R,"X, X",,Y,2,P,,,"X, X","R, R",,,X,5,Y,Y,,Tierras Blancas,Ayapata,C3,Cr170,Y,AO,539 - 522,531,1411 - 1428,LIP,PIII
+Tierras Blancas,Ayapata,C1,Cr85,LIP,Female,,6,Young Adult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,Tierras Blancas,Ayapata,C3,Cr175,N,NA,622 - 541   ,555,1328 - 1409,LIP,PIII
+Tierras Blancas,Ayapata,C1,Cr86,LIP,Female,,5,Young Adult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,Tierras Blancas,Ayapata,C3,Cr178,Y,AO,649 - 564     ,600,1301 - 1386,LIP,PIII
+Tierras Blancas,Ayapata,C1,Cr87,LIP,Female,,4,Adolescent,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,Tierras Blancas,Ayapata,C3,Cr179,Y,AO,629 - 556,608,1321 - 1394,LIP,PIII
+Tierras Blancas,Ayapata,C1,Cr88,LIP,Ind,,NA,Child,Y,1,N,A,,,X,L,X,L,X,,N,0,,,,,,,,,1,Y,Y,,Tierras Blancas,Ayapata,C3,Cr181,Y,AO,630 - 557     ,608,1320 - 1393,LIP,PIII
+Tierras Blancas,Ayapata,C1,Cr89,LIP,Female,,5,Middle Adult,Y,1,N,A,X,R,,,,,,,Y,1,A,X,L,,,,,,2,Y,Y,,Tierras Blancas,Ayapata,C3,Cr184,Y,AO,630 - 557    ,608,1320 - 1393,LIP,PIII
+Tierras Blancas,Ayapata,C1,Cr90,LIP,Ind,,NA,Child,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,Tierras Blancas,Ayapata,C3,Cr194,Y,AO,541 - 524    ,533,1409 - 1426,LIP,PIII
+Tierras Blancas,Ayapata,C1,Cr91,LIP,Ind,,NA,Adolescent,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,Tierras Blancas,Ayapata,C3,Cr195,Y,AE,557 - 541     ,551,1393 - 1409,LIP,PIII
+Tierras Blancas,Ayapata,C1,Cr92,LIP,Ind,,10,Old Adult,Y,3,Y,P,,,"X, X, X","R, L, L",X,L,"X, X",,Y,2,A,"X, X","L, R",,,,,,5,Y,Y,,Tierras Blancas,Ayapata,C4,Cr199,N,NA,653 - 569   ,598,1297 - 1381,LIP,PIII
+Tierras Blancas,Ayapata,C1,Cr93,LIP,Male,,16,Middle Adult,Y,2,Y,P,,,"X, X","L, R",X,R,"X, X",,Y,1,A,X,L,,,,,,3,Y,Y,,Tierras Blancas,Ayapata,C4,Cr200,Y,AO,649 - 564  ,600,1301 - 1386,LIP,PIII
+Tierras Blancas,Ayapata,C1,Cr94,LIP,Female,,6,Adolescent,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,Tierras Blancas,Ayapata,C4,Cr202,Y,AO,545 - 518   ,532,1307 - 1430,LIP,PIII
+Tierras Blancas,Ayapata,C1,Cr95,LIP,Female,,5,Middle Adult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,Tierras Blancas,Ayapata,C4,Cr207,Y,AO,623 - 538    ,555,1297 - 1404,LIP,PIII
+Tierras Blancas,Ayapata,C1,Cr96,LIP,Male,,15,Middle Adult,N,0,N,,,,,,,,,,Y,6,A,"X, X, X, X","L, R","X, X","L, R",,,,6,Y,Y,,Tierras Blancas,Ayapata,C4,Cr208,Y,AO,635 - 559   ,605,1315 - 1391,LIP,PIII
+Tierras Blancas,Ayapata,C1,Cr97,LIP,Ind,,NA,Child,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,Tierras Blancas,Ayapata,C4,Cr209,Y,AO,630 - 557    ,608,1320 - 1393,LIP,PIII
+Tierras Blancas,Ayapata,C1,Cr98,LIP,Female,,9,Middle Adult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,Tierras Blancas,Ayapata,C4,Cr212,NA,NA,553 - 540      ,547,1397 - 1410,LIP,PIII
+Tierras Blancas,Ayapata,C1,Cr99,LIP,Ind,,NA,Child,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,Tierras Blancas,Ayapata,C4,Cr215,Y,AO,553 - 540     ,547,1397 - 1410,LIP,PIII
+Tierras Blancas,Ayapata,C1,Cr100,LIP,Ind,,NA,Child,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,Tierras Blancas,Ayapata,C4,Cr217,Y,AO,639 - 560      ,604,1311 - 1390,LIP,PIII
+Tierras Blancas,Ayapata,C1,Cr101,LIP,Ind,,NA,Child,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,Las Trancas,C. Tribolpata,C1,Cr222,N,NA,1055 - 974  ,1015,895 - 976,MH,TMH
+Tierras Blancas,Ayapata,C1,Cr102,LIP,Male,probable ,12,Young Adult,N,0,N,,,,,,,,,,Y,2,P,,,X,L,,,X,2,Y,Y,,Las Trancas,C. Tribolpata,C1,Cr223,N,NA,970 - 935     ,961,980 - 1015,LIP,PI
+Tierras Blancas,Ayapata,C1,Cr103,LIP,Ind,,NA,Child,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,Las Trancas,C. Tribolpata,C1,Cr224,Y,AO,956 - 935     ,946,994 - 1015,LIP,PI
+Tierras Blancas,Ayapata,C1,Cr104,LIP,Ind,,NA,Child,N,0,N,,,,,,,,,,Y,1,P,,,X,L,,,,1,Y,N,,Las Trancas,C. Tribolpata,C1,Cr225,Y,AO,1045 - 959  ,977,905 - 991,MH,TMH
+Tierras Blancas,Ayapata,C2,Cr105,LIP,Male,,14,Young Adult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,Las Trancas,C. Tribolpata,C1,Cr226,Y,AO,1152 - 989     ,1064,798 - 961,MH,TMH
+Tierras Blancas,Ayapata,C2,Cr106,LIP,Male,,14,Middle Adult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,Las Trancas,C. Tribolpata,C1,Cr227,Y,AO,787 - 741    ,764,1163 - 1209,LIP,PI
+Tierras Blancas,Ayapata,C2,Cr107,LIP,Female,,5,Middle Adult,Y,2,N,AP,X,R,X,L,,,X,,N,0,,,,,,,,,2,Y,Y,,Las Trancas,C. Tribolpata,C1,Cr228,Y,AO,721 - 685  ,704,1229 - 1265,LIP,PII
+Tierras Blancas,Ayapata,C2,Cr108,LIP,Female,,6,Middle Adult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,Las Trancas,C. Tribolpata,C1,Cr229,Y,AO,970 - 935     ,961,980 - 1015,LIP,PI
+Tierras Blancas,Ayapata,C2,Cr109,LIP,Female,,4,Young Adult,N,0,N,,,,,,,,,,Y,1,A,X,L,,,,,,1,Y,N,,Las Trancas,C. Tribolpata,C1,Cr230,N,NA,1170 - 1004 ,1084,780 - 946,MH,TMH
+Tierras Blancas,Ayapata,C2,Cr110,LIP,Male,,9,Young Adult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,Las Trancas,C. Tribolpata,C2,Cr232,N,NA,960 - 935  ,949,990 - 1015,LIP,PI
+Tierras Blancas,Ayapata,C2,Cr111,LIP,Female,,6,Middle Adult,N,0,N,,,,,,,,,,Y,1,A,X,"L, R ",,,,,,1,Y,Y,,Las Trancas,C. Tribolpata,C2,Cr233,Y,AO,897 - 743    ,794,1024 - 1163,LIP,PI
+Tierras Blancas,Ayapata,C2,Cr112,LIP,Male,,13,Old Adult,N,0,N,,,,,,,,,,Y,1,A,X,L,,,,,,1,Y,N,,Las Trancas,C. Tribolpata,C2,Cr234,Y,AO,786 - 742      ,763,1164 - 1208,LIP,PI
+Tierras Blancas,Ayapata,C2,Cr113,LIP,Ind,,NA,Adolescent,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,Las Trancas,C. Tribolpata,C2,Cr235,Y,AO,768 - 734    ,754,1182 - 1216,LIP,PI
+Tierras Blancas,Ayapata,C2,Cr114,LIP,Male,,19,Old Adult,Y,2,Y,P,,,"X, X","L, R","X, X"," L, R",X,,N,0,,,,,,,,,2,Y,Y,,Las Trancas,C. Tribolpata,C2,Cr236,N,NA,1050 - 963    ,1009,900 - 987,MH,TMH
+Tierras Blancas,Ayapata,C2,Cr115,LIP,Male,,17,Middle Adult,N,0,N,,,,,,,,,,Y,4,AP,"X, X, X","L, R",X,R,,,,4,Y,Y,,Las Trancas,C. Tribolpata,C2,Cr237,NA,NA,747 - 688 ,729,1203 - 1262,LIP,PII
+Tierras Blancas,Ayapata,C2,Cr116,LIP,Female,,8,Middle Adult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,Las Trancas,C. Tribolpata,C3,Cr239,Y,AO,771 - 725   ,747,1044 - 1218,LIP,PI
+Tierras Blancas,Ayapata,C2,Cr117,LIP,Male,,17,Young Adult,Y,6,Y,AP,"X, X","R, R","X, X, X, X","L, R",,,,,N,0,,,,,,,,,6,Y,Y,,Las Trancas,C. Tribolpata,C3,Cr240,Y,AO,897 - 769    ,799,1053 - 1181,LIP,PI
+Tierras Blancas,Ayapata,C2,Cr118,LIP,Ind,,NA,Adolescent,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,Las Trancas,C. Tribolpata,C3,Cr241,Y,AO,771 - 736     ,757,1179 - 1214,LIP,PI
+Tierras Blancas,Ayapata,C2,Cr119,LIP,Male,probable ,12,Middle Adult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,Las Trancas,C. Tribolpata,C3,Cr242,Y,AO,918 - 814    ,855,1032 - 1136,LIP,PI
+Tierras Blancas,Ayapata,C2,Cr120,LIP,Male,,17,Old Adult,N,0,N,,,,,,,,,,Y,3,A,"X, X, X","L, R",,,,,,3,Y,Y,,Las Trancas,C. Tribolpata,C3,Cr245,Y,AO,797 - 762    ,780,1153 - 1188,LIP,PI
+Tierras Blancas,Ayapata,C2,Cr121,LIP,Male,,13,Young Adult,Y,1,N,A,X,R,,,,,,,N,0,,,,,,,,,1,Y,Y,,Las Trancas,C. Tribolpata,C3,Cr246,Y,AO,904 - 798     ,861,1046 - 1152,LIP,PI
+Tierras Blancas,Ayapata,C2,Cr122,LIP,Female,,9,Young Adult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,Las Trancas,C. Tribolpata,C3,Cr247,Y,AO,795 - 751     ,777,1155 - 1199,LIP,PI
+Tierras Blancas,Ayapata,C2,Cr123,LIP,Female,,5,Middle Adult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,Las Trancas,C. Tribolpata,C3,Cr251,Y,AE,787 - 732    ,758,1039 - 1211,LIP,PI
+Tierras Blancas,Ayapata,C2,Cr124,LIP,Male,,15,Middle Adult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,,,,,,,,,,,
+Tierras Blancas,Ayapata,C2,Cr125,LIP,Female,,5,Middle Adult,N,0,N,,,,,,,,,,Y,1,A,X,R,,,,,,1,Y,N,,,,,,,,,,,,
+Tierras Blancas,Ayapata,C2,Cr126,LIP,Male,probable ,12,Old Adult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,,,,,,,,,,,
+Tierras Blancas,Ayapata,C2,Cr127A,LIP,Female,,9,Old Adult,N,0,N,,,,,,,,,,Y,2,P,,,"X, X","R, R",,,,2,Y,Y,,,,,,,,,,,,
+Tierras Blancas,Ayapata,C2,Cr127B,LIP,Male,probable ,10,Young Adult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,,,,,,,,,,,
+Tierras Blancas,Ayapata,C2,Cr128,LIP,Male,,18,Young Adult,N,0,N,,,,,,,,,,Y,1,P,,,X,L,,,,1,Y,Y,,,,,,,,,,,,
+Tierras Blancas,Ayapata,C2,Cr129,LIP,Male,,15,Old Adult,N,0,N,,,,,,,,,,Y,2,AP,X,L,X,L,,,,2,Y,Y,,,,,,,,,,,,
+Tierras Blancas,Ayapata,C2,Cr130,LIP,Female,,6,Young Adult,Y,4,Y,AP,"X, X, X","L, L, L",,,,,X,R,N,0,,,,,,,,,4,Y,Y,,,,,,,,,,,,
+Tierras Blancas,Ayapata,C2,Cr131,LIP,Female,,6,Young Adult,N,0,N,,,,,,,,,,Y,3,A,"X, X, X ","L, R, R",,,,,,3,Y,N,,,,,,,,,,,,
+Tierras Blancas,Ayapata,C2,Cr132,LIP,Ind,,NA,Child,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,,,,,,,,,,,
+Tierras Blancas,Ayapata,C2,Cr133,LIP,Ind,,NA,Child,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,,,,,,,,,,,
+Tierras Blancas,Ayapata,C2,Cr134,LIP,Female,,9,Old Adult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,,,,,,,,,,,
+Tierras Blancas,Ayapata,C2,Cr135,LIP,Female,,9,Young Adult,Y,1,N,P,,,X,L,,,,,N,0,,,,,,,,,1,N,N,,,,,,,,,,,,
+Tierras Blancas,Ayapata,C2,Cr136,LIP,Female,,9,Young Adult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,,,,,,,,,,,
+Tierras Blancas,Ayapata,C2,Cr137,LIP,Male,,17,Middle Adult,N,0,N,,,,,,,,,,Y,1,A,X,R,,,,,,1,Y,N,,,,,,,,,,,,
+Tierras Blancas,Ayapata,C2,Cr138,LIP,Male,,17,Old Adult,N,0,N,,,,,,,,,,Y,3,P,,,"X, X, X","L, R, L",,,,3,Y,Y,,,,,,,,,,,,
+Tierras Blancas,Ayapata,C2,Cr139,LIP,Male,,16,Old Adult,N,0,N,,,,,,,,,,Y,6,AP,X,L,"X, X, X, X, X","L, L, L, R, R",,,,6,Y,Y,,,,,,,,,,,,
+Tierras Blancas,Ayapata,C2,Cr140,LIP,Female,,8,Middle Adult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,,,,,,,,,,,
+Tierras Blancas,Ayapata,C2,Cr141,LIP,Female,,6,Middle Adult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,,,,,,,,,,,
+Tierras Blancas,Ayapata,C2,Cr142,LIP,Female,,7,Young Adult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,,,,,,,,,,,
+Tierras Blancas,Ayapata,C2,Cr143,LIP,Female,,8,Middle Adult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,,,,,,,,,,,
+Tierras Blancas,Ayapata,C2,Cr144,LIP,Female,,8,Middle Adult,Y,2,Y,AP,X,L,"X, X","L, L",,,,,Y,1,A,X,L,,,,,,3,Y,Y,,,,,,,,,,,,
+Tierras Blancas,Ayapata,C2,Cr145,LIP,Female,,9,Adolescent,Y,2,Y,AP,X,L,"X, X ","L, L",,,,,N,0,,,,,,,,,2,Y,Y,,,,,,,,,,,,
+Tierras Blancas,Ayapata,C2,Cr146,LIP,Male,,14,Old Adult,N,0,N,,,,,,,,,,Y,1,A,X,L,,,,,,1,Y,Y,,,,,,,,,,,,
+Tierras Blancas,Ayapata,C2,Cr147,LIP,Ind,,NA,Adolescent,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,,,,,,,,,,,
+Tierras Blancas,Ayapata,C2,Cr148,LIP,Female,,4,Middle Adult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,,,,,,,,,,,
+Tierras Blancas,Ayapata,C2,Cr149,LIP,Ind,,11,Middle Adult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,,,,,,,,,,,
+Tierras Blancas,Ayapata,C2,Cr150,LIP,Male,probable ,10,Middle Adult,N,0,N,,,,,,,,,,Y,1,A,X,R,,,,,,1,Y,Y,,,,,,,,,,,,
+Tierras Blancas,Ayapata,C2,Cr151,LIP,Male,,17,Old Adult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,,,,,,,,,,,
+Tierras Blancas,Ayapata,C2,Cr152,LIP,Female,,8,Middle Adult,N,0,N,,,,,,,,,,Y,1,A,X,R,,,,,,1,Y,N,,,,,,,,,,,,
+Tierras Blancas,Ayapata,C2,Cr153,LIP,Male,,13,Young Adult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,,,,,,,,,,,
+Tierras Blancas,Ayapata,C2,Cr154,LIP,Male,,16,Middle Adult,N,0,N,,,,,,,,,,Y,1,A,X,R,,,,,,1,Y,N,,,,,,,,,,,,
+Tierras Blancas,Ayapata,C2,Cr155,LIP,Male,,13,Old Adult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,,,,,,,,,,,
+Tierras Blancas,Ayapata,C2,Cr156,LIP,Female,,4,Adolescent,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,,,,,,,,,,,
+Tierras Blancas,Ayapata,C2,Cr157,LIP,Female,,6,Old Adult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,,,,,,,,,,,
+Tierras Blancas,Ayapata,C2,Cr158,LIP,Female,,5,Middle Adult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,,,,,,,,,,,
+Tierras Blancas,Ayapata,C2,158A,LIP,Male,,15,Middle Adult,N,0,N,,,,,,,,,,Y,1,A,X,L,,,,,,1,Y,Y,,,,,,,,,,,,
+Tierras Blancas,Ayapata,C2,158B,LIP,Male,probable ,"11,5",Young Adult,N,0,N,,,,,,,,,,Y,1,P,,,X,L,,,,1,Y,N,,,,,,,,,,,,
+Tierras Blancas,Ayapata,C2,158C,LIP,Female,,7,Young Adult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,,,,,,,,,,,
+Tierras Blancas,Ayapata,C2,158D,LIP,Female,,4,Adolescent,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,,,,,,,,,,,
+Tierras Blancas,Ayapata,C2,158E,LIP,Male,,"13,5",Young Adult,N,0,N,,,,,,,,,,Y,1,P,,,X,R,,,,1,Y,Y,,,,,,,,,,,,
+Tierras Blancas,Ayapata,C2,158F,LIP,Male,,13,Young Adult,N,0,N,,,,,,,,,,Y,2,AP,X,,X,R,,,,2,Y,Y,,,,,,,,,,,,
+Tierras Blancas,Ayapata,C2,158G,LIP,Male,,"15,5",Middle Adult,N,0,N,,,,,,,,,,Y,3,AP,X,R,"X, X, X",R,,,,3,Y,Y,,,,,,,,,,,,
+Tierras Blancas,Ayapata,C2,158H,LIP,Male,,17,Middle Adult,N,0,N,,,,,,,,,,Y,1,A,X,L,,,,,,1,Y,Y,,,,,,,,,,,,
+Tierras Blancas,Ayapata,C2,158I,LIP,Ind,,"10,5",Old Adult,N,0,N,,,,,,,,,,Y,1,P,,,X,L,,,,1,Y,N,,,,,,,,,,,,
+Tierras Blancas,Ayapata,C2,158J,LIP,Female,,7,Middle Adult,N,0,N,,,,,,,,,,Y,1,A,X,L,,,,,,1,Y,Y,,,,,,,,,,,,
+Tierras Blancas,Ayapata,C2,158K,LIP,Ind,,NA,Child,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,,,,,,,,,,,
+Tierras Blancas,Ayapata,C2,158L,LIP,Female,,6,Middle Adult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,,,,,,,,,,,
+Tierras Blancas,Ayapata,C2,158M,LIP,Male,,13,Middle Adult,N,0,N,,,,,,,,,,Y,2,P,,,"X, X",L,,,,2,Y,Y,,,,,,,,,,,,
+Tierras Blancas,Ayapata,C2,158N,LIP,Female,,5,Middle Adult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,,,,,,,,,,,
+Tierras Blancas,Ayapata,C2,158O,LIP,Male,,"16,5",Old Adult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,,,,,,,,,,,
+Tierras Blancas,Ayapata,C3,Cr159,LIP,Female,,5,Young Adult,Y,2,N,P,,,X,LR,,,X,,Y,1,A,X,L,,,,,,3,Y,Y,,,,,,,,,,,,
+Tierras Blancas,Ayapata,C3,Cr160,LIP,Female,,5,Adolescent,Y,2,Y,AP,X,L/R,C,R,X,,X,R,N,0,,,,,,,,,2,Y,Y,,,,,,,,,,,,
+Tierras Blancas,Ayapata,C3,Cr161,LIP,Female,,5,Young Adult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,,,,,,,,,,,
+Tierras Blancas,Ayapata,C3,Cr162,LIP,Female,,6,Young Adult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,,,,,,,,,,,
+Tierras Blancas,Ayapata,C3,Cr163,LIP,Female,,6,Adolescent,Y,6,Y,AP,X,R,"X, X, X","L, L, R",,,"X, X,",,Y,1,P,,,X,R,,,,7,Y,Y,,,,,,,,,,,,
+Tierras Blancas,Ayapata,C3,Cr164,LIP,Male,,16,Young Adult,Y,1,N,P,,,"X,X",LR,,,X,,N,0,,,,,,,,,1,Y,Y,,,,,,,,,,,,
+Tierras Blancas,Ayapata,C3,Cr165,LIP,Ind,,NA,Adolescent,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,,,,,,,,,,,
+Tierras Blancas,Ayapata,C3,Cr166,LIP,Male,,"15,5",Middle Adult,N,0,N,,,,,,,,,,Y,1,P,,,X,R,,,,1,Y,N,,,,,,,,,,,,
+Tierras Blancas,Ayapata,C3,Cr167,LIP,Male,,NA,Adolescent,Y,3,Y,AP,X,R,"X, X","L, L",,,,,N,0,,,,,,,,,3,Y,Y,,,,,,,,,,,,
+Tierras Blancas,Ayapata,C3,Cr168,LIP,Ind,,NA,Child,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,,,,,,,,,,,
+Tierras Blancas,Ayapata,C3,Cr169,LIP,Female,,8,Young Adult,Y,2,N,AP,,,X,R,X,R,,,N,0,,,,,,,,,2,Y,Y,,,,,,,,,,,,
+Tierras Blancas,Ayapata,C3,Cr170,LIP,Male,,14,Young Adult,N,0,N,,,,,,,,,,Y,2,P,,,"X, X","L, L",,,,2,Y,Y,,,,,,,,,,,,
+Tierras Blancas,Ayapata,C3,Cr171,LIP,Male,,15,Old Adult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,,,,,,,,,,,
+Tierras Blancas,Ayapata,C3,Cr172,LIP,Ind,,NA,Child,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,,,,,,,,,,,
+Tierras Blancas,Ayapata,C3,Cr173,LIP,Female,,7,Young Adult,N,0,N,,,,,,,,,,Y,1,A,X,R,,,,,,1,Y,N,,,,,,,,,,,,
+Tierras Blancas,Ayapata,C3,Cr174,LIP,Ind,,NA,Child,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,,,,,,,,,,,
+Tierras Blancas,Ayapata,C3,Cr175,LIP,Ind,,6,Adolescent,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,,,,,,,,,,,
+Tierras Blancas,Ayapata,C3,Cr176,LIP,Female,,4,Young Adult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,,,,,,,,,,,
+Tierras Blancas,Ayapata,C3,Cr177,LIP,Ind,,NA,Infant,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,,,,,,,,,,,
+Tierras Blancas,Ayapata,C3,Cr178,LIP,Male,,14,Middle Adult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,,,,,,,,,,,
+Tierras Blancas,Ayapata,C3,Cr179,LIP,Male,probable ,12,Young Adult,Y,2,Y,,,"X,X",LR,,,,X,,N,0,,,,,,,,,2,Y,Y,,,,,,,,,,,,
+Tierras Blancas,Ayapata,C3,Cr180,LIP,Male,,16,Middle Adult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,,,,,,,,,,,
+Tierras Blancas,Ayapata,C3,Cr181,LIP,Male,,16,Middle Adult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,,,,,,,,,,,
+Tierras Blancas,Ayapata,C3,Cr182,LIP,Female,,8,Middle Adult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,,,,,,,,,,,
+Tierras Blancas,Ayapata,C3,Cr183,LIP,Male,probable ,12,Middle Adult,N,0,N,,,,,,,,,,Y,3,P,,,"X, X, X","L, R, L/R",,,,3,Y,Y,,,,,,,,,,,,
+Tierras Blancas,Ayapata,C3,Cr184,LIP,Ind,,5,Adolescent,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,,,,,,,,,,,
+Tierras Blancas,Ayapata,C3,Cr185,LIP,Ind,,11,Middle Adult,Y,1,N,P,,,X,L,,,X,L,Y,1,P,,,X,L,,,,2,Y,Y,,,,,,,,,,,,
+Tierras Blancas,Ayapata,C3,Cr186,LIP,Ind,,NA,Child,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,,,,,,,,,,,
+Tierras Blancas,Ayapata,C3,Cr187,LIP,Female,,5,Middle Adult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,,,,,,,,,,,
+Tierras Blancas,Ayapata,C3,Cr188,LIP,Female,,6,Young Adult,N,0,N,,,,,,,,,,Y,1,A,X,R,,,,,,1,Y,Y,,,,,,,,,,,,
+Tierras Blancas,Ayapata,C3,Cr189,LIP,Ind,,NA,Child,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,,,,,,,,,,,
+Tierras Blancas,Ayapata,C3,Cr190,LIP,Female,,9,Young Adult,N,0,N,,,,,,,,,,Y,1,P,,,X,L,,,,1,Y,Y,,,,,,,,,,,,
+Tierras Blancas,Ayapata,C3,Cr191,LIP,Ind,,NA,Infant,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,,,,,,,,,,,
+Tierras Blancas,Ayapata,C3,Cr192,LIP,Male,probable ,"11,5",Middle Adult,N,0,N,,,,,,,,,,Y,1,A,X,R,,,,,,1,Y,N,,,,,,,,,,,,
+Tierras Blancas,Ayapata,C3,Cr193,LIP,Ind,,NA,Child,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,,,,,,,,,,,
+Tierras Blancas,Ayapata,C3,Cr194,LIP,Female,probable ,10,Young Adult,N,0,N,,,,,,,,,,Y,2,A,X,R,"X, X","R, R",,,,2,Y,Y,,,,,,,,,,,,
+Tierras Blancas,Ayapata,C3,Cr195,LIP,Female,probable ,10,Middle Adult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,,,,,,,,,,,
+Tierras Blancas,Ayapata,C3,Cr196,LIP,Ind,,NA,Infant,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,,,,,,,,,,,
+Tierras Blancas,Ayapata,C3,Cr197,LIP,Male,,13,Young Adult,N,0,N,,,,,,,,,,Y,1,P,,,X,L,,,,1,Y,N,,,,,,,,,,,,
+Tierras Blancas,Ayapata,C4,Cr198,LIP,Male,,16,Middle Adult,N,0,N,,,,,,,,,,Y,2,P,,,"X, X","L, R",,,,2,Y,N,,,,,,,,,,,,
+Tierras Blancas,Ayapata,C4,Cr199,LIP,Female,,5,Adolescent,Y,3,Y,P,,,"X, X","R,R","X, X",R,,,Y,1,P,,,X,R,,,,4,Y,Y,,,,,,,,,,,,
+Tierras Blancas,Ayapata,C4,Cr200,LIP,Male,,15,Young Adult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,,,,,,,,,,,
+Tierras Blancas,Ayapata,C4,Cr201,LIP,Ind,,NA,Child,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,,,,,,,,,,,
+Tierras Blancas,Ayapata,C4,Cr202,LIP,Female,,4,Adolescent,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,,,,,,,,,,,
+Tierras Blancas,Ayapata,C4,Cr203,LIP,Ind,,NA,Child,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,,,,,,,,,,,
+Tierras Blancas,Ayapata,C4,Cr204,LIP,Female,,6,Young Adult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,,,,,,,,,,,
+Tierras Blancas,Ayapata,C4,Cr205,LIP,Male,,16,Middle Adult,N,0,N,,,,,,,,,,Y,1,A,X,L,,,,,,1,Y,Y,,,,,,,,,,,,
+Tierras Blancas,Ayapata,C4,Cr206,LIP,Male,,13,Middle Adult,N,0,N,,,,,,,,,,Y,5,AP,"X, X","L, R","X, X, X ",R,,,,5,Y,Y,,,,,,,,,,,,
+Tierras Blancas,Ayapata,C4,Cr207,LIP,Female,,4,Adolescent,Y,1,Y,P,,,X,L,,,X,,Y,1,A,X,L,,,,,,2,N,N,,,,,,,,,,,,
+Tierras Blancas,Ayapata,C4,Cr208,LIP,Male,,15,Old Adult,N,0,N,,,,,,,,,,Y,3,AP,"X, X, X","R, L",X,L,,,,3,Y,Y,,,,,,,,,,,,
+Tierras Blancas,Ayapata,C4,Cr209,LIP,Male,probable ,12,Old Adult,Y,1,N,P,,,X,R,,,,,Y,5,AP,"X, X, X, X","L, R, R, R, R",X,R,,,,6,Y,Y,,,,,,,,,,,,
+Tierras Blancas,Ayapata,C4,Cr210,LIP,Ind,,9,Middle Adult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,,,,,,,,,,,
+Tierras Blancas,Ayapata,C4,Cr211,LIP,Ind,,NA,Child,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,,,,,,,,,,,
+Tierras Blancas,Ayapata,C4,Cr212,LIP,Ind,,NA,Child,Y,2,N,AP,X,L,"X, X","L, R",,,,,N,0,,,,,,,,,2,Y,Y,,,,,,,,,,,,
+Tierras Blancas,Ayapata,C4,Cr213,LIP,Female,,5,Young Adult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,,,,,,,,,,,
+Tierras Blancas,Ayapata,C4,Cr214,LIP,Ind,,NA,Adolescent,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,,,,,,,,,,,
+Tierras Blancas,Ayapata,C4,Cr215,LIP,Female,,5,Middle Adult,N,0,N,,,,,,,,,,Y,3,P,,,"X, X, X","R, R, L",,,,3,Y,Y,,,,,,,,,,,,
+Tierras Blancas,Ayapata,C4,Cr216,LIP,Male,,14,Old Adult,N,0,N,,,,,,,,,,Y,2,P,,,X,R,,,X,2,Y,Y,,,,,,,,,,,,
+Tierras Blancas,Ayapata,C4,Cr217,LIP,Female,,5,Young Adult,Y,2,N,P,,,X,L,X,L,X,L,N,0,,,,,,,,,2,Y,Y,,,,,,,,,,,,
+Tierras Blancas,Ayapata,C4,Cr218,LIP,Male,probable ,12,Middle Adult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,,,,,,,,,,,
+Tierras Blancas,Ayapata,C4,Cr219,LIP,Ind,,"11,5",Middle Adult,N,0,N,,,,,,,,,,Y,2,A,X,R,,,,,,2,Y,N,,,,,,,,,,,,
+Tierras Blancas,Ayapata,C4,Cr220,LIP,Female,,7,Middle Adult,N,0,N,,,,,,,,,,Y,1,P,,,X,R,,,,1,Y,Y,,,,,,,,,,,,
+Tierras Blancas,Ayapata,C4,Cr221,LIP,Female,,7,Young Adult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,,,,,,,,,,,
+Las Trancas,C. Tribolpata,C1,Cr222,LIP,Female,,7,Young Adult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,,,,,,,,,,,
+Las Trancas,C. Tribolpata,C1,Cr223,LIP,Female,,9,Young Adult,N,0,N,,,,,,,,,,Y,2,AP,X,R,X,R,,,,2,Y,Y,,,,,,,,,,,,
+Las Trancas,C. Tribolpata,C1,Cr224,LIP,Ind,,NA,Child,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,,,,,,,,,,,
+Las Trancas,C. Tribolpata,C1,Cr225,LIP,Female,,6,Adolescent,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,,,,,,,,,,,
+Las Trancas,C. Tribolpata,C1,Cr226,LIP,Male,,14,Middle Adult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,,,,,,,,,,,
+Las Trancas,C. Tribolpata,C1,Cr227,LIP,Female,probable ,10,Middle Adult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,,,,,,,,,,,
+Las Trancas,C. Tribolpata,C1,Cr228,LIP,Female,probable ,10,Young Adult,N,0,N,,,,,,,,,,Y,1,A,X,R,,,,,,1,Y,N,,,,,,,,,,,,
+Las Trancas,C. Tribolpata,C1,Cr229,LIP,Male,,17,Old Adult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,,,,,,,,,,,
+Las Trancas,C. Tribolpata,C1,Cr230,LIP,Male,,13,Old Adult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,,,,,,,,,,,
+Las Trancas,C. Tribolpata,C1,Cr231,LIP,Female,,8,Middle Adult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,,,,,,,,,,,
+Las Trancas,C. Tribolpata,C2,Cr232,LIP,Male,,14,Old Adult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,,,,,,,,,,,
+Las Trancas,C. Tribolpata,C2,Cr233,LIP,Male,,16,Middle Adult,Y,1,Y,A,X,L/R,,,,,,,Y,1,P,,,X,L,,,,2,Y,Y,,,,,,,,,,,,
+Las Trancas,C. Tribolpata,C2,Cr234,LIP,Female,,6,Young Adult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,,,,,,,,,,,
+Las Trancas,C. Tribolpata,C2,Cr235,LIP,Female,,8,Middle Adult,N,0,N,,,,,,,,,,Y,1,P,,,X,R,,,,1,Y,N,,,,,,,,,,,,
+Las Trancas,C. Tribolpata,C2,Cr236,LIP,Female,,8,Adolescent,NA,,N,,,,,,,,,,NA,,,,,,,,,,0,N,N,,,,,,,,,,,,
+Las Trancas,C. Tribolpata,C2,Cr237,LIP,Female,,4,Middle Adult,Y,1,N,P,,,X,R,,,,,N,0,,,,,,,,,1,Y,Y,,,,,,,,,,,,
+Las Trancas,C. Tribolpata,C2,Cr238,LIP,Ind,,12,Middle Adult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,,,,,,,,,,,
+Las Trancas,C. Tribolpata,C3,Cr239,LIP,Female,,8,Young Adult,Y,1,N,A,X,L/R,,,,,,,Y,1,A,X,R,,,,,,2,Y,Y,,,,,,,,,,,,
+Las Trancas,C. Tribolpata,C3,Cr240,LIP,Male,probable ,"12,5",Middle Adult,N,0,N,,,,,,,,,,Y,2,P,,,X,L,,,,2,Y,N,,,,,,,,,,,,
+Las Trancas,C. Tribolpata,C3,Cr241,LIP,Female,,5,Young Adult,NA,,N,,,,,,,,,,NA,,,,,,,,,,0,N,N,,,,,,,,,,,,
+Las Trancas,C. Tribolpata,C3,Cr242,LIP,Female,,4,Adolescent,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,,,,,,,,,,,
+Las Trancas,C. Tribolpata,C3,Cr243,LIP,Female,,5,Middle Adult,NA,,N,,,,,,,,,,NA,0,,,,,,,,,0,N,N,,,,,,,,,,,,
+Las Trancas,C. Tribolpata,C3,Cr244,LIP,Female,,6,Middle Adult,N,0,N,,,,,,,,,,Y,4,P,,,X,R,,,X,4,Y,Y,,,,,,,,,,,,
+Las Trancas,C. Tribolpata,C3,Cr245,LIP,Ind,,NA,Child,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,,,,,,,,,,,
+Las Trancas,C. Tribolpata,C3,Cr246,LIP,Female,,4,Young Adult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,,,,,,,,,,,
+Las Trancas,C. Tribolpata,C3,Cr247,LIP,Ind,,11,Middle Adult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,,,,,,,,,,,
+Las Trancas,C. Tribolpata,C3,Cr248,LIP,Female,,5,Middle Adult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,,,,,,,,,,,
+Las Trancas,C. Tribolpata,C3,Cr249,LIP,Ind,,12,Middle Adult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,,,,,,,,,,,
+Las Trancas,C. Tribolpata,C3,Cr250,LIP,Male,,14,Middle Adult,N,0,N,,,,,,,,,,Y,8,P,,,XXXXXXXX,L/R,,,,8,Y,Y,,,,,,,,,,,,
+Las Trancas,C. Tribolpata,C3,Cr251,LIP,Female,,4,Adolescent,N,0,N,,,,,,,,,,Y,1,P,,,XXXXXXXX,L,,,,1,Y,N,,,,,,,,,,,,
+Las Trancas,C. Tribolpata,C3,Cr252,LIP,Male,,15,Old Adult,N,0,N,,,,,,,,,,Y,3,AP,X,L,X,L,,,X,3,Y,Y,,,,,,,,,,,,
+Las Trancas,C. Tribolpata,C3,Cr253,LIP,Male,,15,Middle Adult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,N,,,,,,,,,,,,
+Nasca,,,,aMiddle Horizon ,Male,,,,N,0,N,,,,,,,,,,Y,1,,,,,,,,,1,Y,,,,,,,,,,,,,
+Nasca,,,,aMiddle Horizon ,Male,,,,N,0,N,,,,,,,,,,Y,1,,,,,,,,,1,Y,,,,,,,,,,,,,
+Nasca,,,,aMiddle Horizon ,Male,,,,N,0,N,,,,,,,,,,Y,1,,,,,,,,,1,Y,,,,,,,,,,,,,
+Nasca,,,,aMiddle Horizon ,Male,,,,N,0,N,,,,,,,,,,Y,1,,,,,,,,,1,Y,,,,,,,,,,,,,
+Nasca,,,,aMiddle Horizon ,Male,,,,N,0,N,,,,,,,,,,Y,1,,,,,,,,,1,Y,,,,,,,,,,,,,
+Nasca,,,,aMiddle Horizon ,Male,,,,N,0,N,,,,,,,,,,Y,2,,,,,,,,,2,Y,,,,,,,,,,,,,
+Nasca,,,,aMiddle Horizon ,Male,,,,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,,,,,,,,,,,,,
+Nasca,,,,aMiddle Horizon ,Male,,,,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,,,,,,,,,,,,,
+Nasca,,,,aMiddle Horizon ,Male,,,,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,,,,,,,,,,,,,
+Nasca,,,,aMiddle Horizon ,Male,,,,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,,,,,,,,,,,,,
+Nasca,,,,aMiddle Horizon ,Male,,,,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,,,,,,,,,,,,,
+Nasca,,,,aMiddle Horizon ,Male,,,,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,,,,,,,,,,,,,
+Nasca,,,,aMiddle Horizon ,Male,,,,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,,,,,,,,,,,,,
+Nasca,,,,aMiddle Horizon ,Male,,,,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,,,,,,,,,,,,,
+Nasca,,,,aMiddle Horizon ,Male,,,,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,,,,,,,,,,,,,
+Nasca,,,,aMiddle Horizon ,Male,,,,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,,,,,,,,,,,,,
+Nasca,,,,aMiddle Horizon ,Male,,,,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,,,,,,,,,,,,,
+Nasca,,,,aMiddle Horizon ,Male,,,,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,,,,,,,,,,,,,
+Nasca,,,,aMiddle Horizon ,Male,,,,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,,,,,,,,,,,,,
+Nasca,,,,aMiddle Horizon ,Male,,,,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,,,,,,,,,,,,,
+Nasca,,,,aMiddle Horizon ,Male,,,,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,,,,,,,,,,,,,
+Nasca,,,,aMiddle Horizon ,Male,,,,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,,,,,,,,,,,,,
+Nasca,,,,aMiddle Horizon ,Male,,,,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,,,,,,,,,,,,,
+Nasca,,,,aMiddle Horizon ,Male,,,,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,,,,,,,,,,,,,
+Nasca,,,,aMiddle Horizon ,Male,,,,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,,,,,,,,,,,,,
+Nasca,,,,aMiddle Horizon ,Male,,,,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,,,,,,,,,,,,,
+Nasca,,,,aMiddle Horizon ,Male,,,,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,,,,,,,,,,,,,
+Nasca,,,,aMiddle Horizon ,Male,,,,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,,,,,,,,,,,,,
+Nasca,,,,aMiddle Horizon ,Male,,,,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,,,,,,,,,,,,,
+Nasca,,,,aMiddle Horizon ,Male,,,,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,,,,,,,,,,,,,
+Nasca,,,,aMiddle Horizon ,Male,,,,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,,,,,,,,,,,,,
+Nasca,,,,aMiddle Horizon ,Male,,,,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,,,,,,,,,,,,,
+Nasca,,,,aMiddle Horizon ,Male,,,,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,,,,,,,,,,,,,
+Nasca,,,,aMiddle Horizon ,Male,,,,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,,,,,,,,,,,,,
+Nasca,,,,aMiddle Horizon ,Male,,,,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,,,,,,,,,,,,,
+Nasca,,,,aMiddle Horizon ,Male,,,,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,,,,,,,,,,,,,
+Nasca,,,,aMiddle Horizon ,Female,,,,N,0,N,,,,,,,,,,Y,1,,,,,,,,,1,Y,,,,,,,,,,,,,
+Nasca,,,,aMiddle Horizon ,Female,,,,N,0,N,,,,,,,,,,Y,1,,,,,,,,,1,Y,,,,,,,,,,,,,
+Nasca,,,,aMiddle Horizon ,Female,,,,N,0,N,,,,,,,,,,Y,1,,,,,,,,,1,Y,,,,,,,,,,,,,
+Nasca,,,,aMiddle Horizon ,Female,,,,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,,,,,,,,,,,,,
+Nasca,,,,aMiddle Horizon ,Female,,,,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,,,,,,,,,,,,,
+Nasca,,,,aMiddle Horizon ,Female,,,,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,,,,,,,,,,,,,
+Nasca,,,,aMiddle Horizon ,Female,,,,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,,,,,,,,,,,,,
+Nasca,,,,aMiddle Horizon ,Female,,,,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,,,,,,,,,,,,,
+Nasca,,,,aMiddle Horizon ,Female,,,,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,,,,,,,,,,,,,
+Nasca,,,,aMiddle Horizon ,Female,,,,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,,,,,,,,,,,,,
+Nasca,,,,aMiddle Horizon ,Female,,,,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,,,,,,,,,,,,,
+Nasca,,,,aMiddle Horizon ,Female,,,,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,,,,,,,,,,,,,
+Nasca,,,,aMiddle Horizon ,Female,,,,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,,,,,,,,,,,,,
+Nasca,,,,aMiddle Horizon ,Female,,,,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,,,,,,,,,,,,,
+Nasca,,,,aMiddle Horizon ,Female,,,,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,,,,,,,,,,,,,
+Nasca,,,,aMiddle Horizon ,Female,,,,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,,,,,,,,,,,,,
+Nasca,,,,aMiddle Horizon ,Female,,,,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,,,,,,,,,,,,,
+Nasca,,,,aMiddle Horizon ,Female,,,,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,,,,,,,,,,,,,
+Nasca,,,,aMiddle Horizon ,Female,,,,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,,,,,,,,,,,,,
+Nasca,,,,aMiddle Horizon ,Female,,,,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,,,,,,,,,,,,,
+Nasca,,,,aMiddle Horizon ,Female,,,,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,,,,,,,,,,,,,
+Nasca,,,,aMiddle Horizon ,Female,,,,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,,,,,,,,,,,,,
+Nasca,,,,aMiddle Horizon ,Female,,,,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,,,,,,,,,,,,,
+Nasca,,,,aMiddle Horizon ,Female,,,,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,,,,,,,,,,,,,
+Nasca,,,,aMiddle Horizon ,Female,,,,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,,,,,,,,,,,,,
+Nasca,,,,aMiddle Horizon ,Female,,,,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,,,,,,,,,,,,,
+Nasca,,,,aMiddle Horizon ,Female,,,,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,,,,,,,,,,,,,
+Nasca,,,,aMiddle Horizon ,Female,,,,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,,,,,,,,,,,,,
+Nasca,,,,aMiddle Horizon ,Female,,,,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,,,,,,,,,,,,,
+Nasca,,,,aMiddle Horizon ,Female,,,,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,,,,,,,,,,,,,
+Nasca,,,,aMiddle Horizon ,Female,,,,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,,,,,,,,,,,,,
+Nasca,,,,aMiddle Horizon ,Female,,,,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,,,,,,,,,,,,,
+Nasca,,,,aMiddle Horizon ,Female,,,,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,,,,,,,,,,,,,
+Nasca,,,,aMiddle Horizon ,Female,,,,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,,,,,,,,,,,,,
+Nasca,,,,aMiddle Horizon ,Female,,,,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,,,,,,,,,,,,,
+Nasca,,,,aMiddle Horizon ,Female,,,,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,,,,,,,,,,,,,
+Nasca,,,,aMiddle Horizon ,Female,,,,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,,,,,,,,,,,,,
+Nasca,,,,aMiddle Horizon ,Female,,,,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,,,,,,,,,,,,,
+Nasca,,,,aMiddle Horizon ,Female,,,,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,,,,,,,,,,,,,
+Nasca,,,,aMiddle Horizon ,Female,,,,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,,,,,,,,,,,,,
+Nasca,,,,aMiddle Horizon ,Female,,,,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,,,,,,,,,,,,,
+Nasca,,,,aMiddle Horizon ,Female,,,,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,,,,,,,,,,,,,
+Nasca,,,,aMiddle Horizon ,Female,,,,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,,,,,,,,,,,,,
+Nasca,,,,aMiddle Horizon ,Female,,,,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,,,,,,,,,,,,,
+Nasca,,,,aMiddle Horizon ,Ind,,,Subadult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,,,,,,,,,,,,,
+Nasca,,,,aMiddle Horizon ,Ind,,,Subadult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,,,,,,,,,,,,,
+Nasca,,,,aMiddle Horizon ,Ind,,,Subadult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,,,,,,,,,,,,,
+Nasca,,,,aMiddle Horizon ,Ind,,,Subadult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,,,,,,,,,,,,,
+Nasca,,,,aMiddle Horizon ,Ind,,,Subadult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,,,,,,,,,,,,,
+Nasca,,,,aMiddle Horizon ,Ind,,,Subadult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,,,,,,,,,,,,,
+Nasca,,,,aMiddle Horizon ,Ind,,,Subadult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,,,,,,,,,,,,,
+Nasca,,,,aMiddle Horizon ,Ind,,,Subadult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,,,,,,,,,,,,,
+Nasca,,,,aMiddle Horizon ,Ind,,,Subadult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,,,,,,,,,,,,,
+Nasca,,,,aMiddle Horizon ,Ind,,,Subadult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,,,,,,,,,,,,,
+Nasca,,,,aMiddle Horizon ,Ind,,,Subadult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,,,,,,,,,,,,,
+Nasca,,,,aMiddle Horizon ,Ind,,,Subadult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,,,,,,,,,,,,,
+Nasca,,,,aMiddle Horizon ,Ind,,,Subadult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,,,,,,,,,,,,,
+Nasca,,,,aMiddle Horizon ,Ind,,,Subadult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,,,,,,,,,,,,,
+Nasca,,,,aMiddle Horizon ,Ind,,,Subadult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,,,,,,,,,,,,,
+Nasca,,,,aMiddle Horizon ,Ind,,,Subadult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,,,,,,,,,,,,,
+Nasca,,,,aMiddle Horizon ,Ind,,,Subadult,N,0,N,,,,,,,,,,N,0,,,,,,,,,0,N,,,,,,,,,,,,,
