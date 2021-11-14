@@ -22,11 +22,24 @@ as_tibble(dados_base)
 
 #selecionando vari??veis para an??lise usando fun????es do pacote "dplyr"
 
-dados_analise = select(dados_base,Regi??o,S??tio,Eleva????o.m.:Perimortem_anterior,Total_posterior:Perimortem_posterior)
-dados_analise
 
-dados_analise %>%
-  filter(Sexo == "M") %>%
-  select(Regi??o,S??tio,Cronologia,Sexo)
+#Adicionando frequencia relativa de trauma 
+dados_base %>% 
+  mutate(fr_trauma = N_id_afetados/N_id, fr_trauma_anti = N_id_antimortem/N_id, 
+         fr_trauma_peri = N_id_perimortem/N_id)
 
+
+#Seprando a base de dados por sexo e vari??veis de interesse
+
+dados_base_M = dados_base %>%  
+  filter(Sexo == "M") %>% select(Regi??o:Lateral.D)
+dados_base_F = dados_base %>%  
+  filter(Sexo == "F") %>% select(Regi??o:Lateral.D)
+dados_base_Nid = dados_base %>%  
+  filter(Sexo == "Nid") %>% select(Regi??o:Lateral.D)
+
+
+
+
+ 
 
