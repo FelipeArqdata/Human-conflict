@@ -1,0 +1,95 @@
+---
+title: "Reproduzindo analises de isótopos"
+author: "Felipe"
+date: "25/02/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+Carregando pacotes
+```{r message=FALSE warning=FALSE}
+#carregando pacotes de manipular dados
+suppressPackageStartupMessages(library(plyr))
+suppressPackageStartupMessages(library(dplyr))
+suppressPackageStartupMessages(library(tidyr))
+suppressPackageStartupMessages(library(stringr))
+suppressPackageStartupMessages(library(stringi))
+suppressPackageStartupMessages(library(tidyverse))
+
+#exporting as an html file
+suppressPackageStartupMessages(library(knitr))
+
+```
+
+```{r message = FALSE , warning = FALSE}
+#Pacotes de análises
+
+
+#pacotes de plotagem
+#install.packages("SIBER")
+suppressPackageStartupMessages(library(SIBER))
+
+
+```
+
+Preparação dos dados
+
+```{r}
+library(readr)
+dat <- read.csv("iso_andesdois.csv", na.strings = c("","NA"))
+names(dat)
+#View(dat)
+```
+Separando dados de isótopos de carbono e nitrogênio sem valores "NA"
+```{r}
+dat.both<-dat[which(dat$N.b.coll.!= "NA" & dat$C.b.coll. != "NA"),] 
+# selecionando os dados de N e C sem os valores NA
+```
+
+Separando dados do Centro-Sul do Peru
+```{r}
+dat.peru<-dat.both %>% filter(Region %in% c("South Coast","Central Coast","South Highlands","Central Highlands"))
+```
+
+Separando dados do Norte do Chile
+```{r}
+#dat.chile<-dat.both %>% filter(Region%in%c("North Chile Coast","North Chile")) - NÃO SERÁ USADO
+```
+
+Manipulando dados do Centro-Sul do Peru, filtrando por cronologia (EIP,MH,LIP)
+```{r}
+dat.peru.temp <- dat.peru %>% filter(Period%in%c("Early Intermediate Period","Middle Horizon","Late Intermediate Period"))
+#View(dat.peru.temp)
+#write.csv(dat.peru.temp, "dadosisoperu.csv",row.names = FALSE)
+```
+
+Preparando os dados para usar o pacote Siber para plotar elipses
+```{r}
+dat.siber <- dat.peru.temp [,c("C.b.coll.", "N.b.coll.","elev.factor","Period")]
+colnames(dat.siber) <- c("iso1", "iso2", "group","community")
+
+dat.siber.periods <- dat.siber [which(dat.siber$community == "Early Intermediate Period" | dat.siber$community == "Middle Horizon" | dat.siber$community == "Late Intermediate Period"),]
+
+#
+
+
+siber.eip <- dat.siber.periods %>% filter (community == "Early Intermediate Period")
+
+siber.mh <- dat.siber.periods %>% filter(community == "Middle Horizon")
+
+
+siber.eip <- createSiberObject(siber.eip)
+#reorder the levels so they go Coastal, Mid-elevation, Highland
+siber.eip$original.data$group <- factor(siber.eip$original.data$group, levels = c("Coast al", "Mid-elevation", "Highland"))
+
+
+
+
+
+
+```
+
+
+Escolhendo cores rgb para a plotagem

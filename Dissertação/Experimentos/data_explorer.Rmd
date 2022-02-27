@@ -1,0 +1,37 @@
+---
+title: "Explorando os dados"
+author: "Felipe"
+date: "25/02/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Carregando pacotes para manipulação
+
+```{r echo = FALSE}
+#carregando pacotes de manipular dados
+suppressPackageStartupMessages(library(plyr))
+suppressPackageStartupMessages(library(dplyr))
+suppressPackageStartupMessages(library(tidyr))
+suppressPackageStartupMessages(library(stringr))
+suppressPackageStartupMessages(library(stringi))
+suppressPackageStartupMessages(library(tidyverse))
+suppressPackageStartupMessages(library(readr))
+
+#exporting as an html file
+suppressPackageStartupMessages(library(knitr))
+```
+
+Carregando dados 
+
+```{r}
+dados_traumas <- read.csv("traumas.csv", na.strings = c("","NA"), sep = ";")
+names(dados_traumas)
+View(dados_traumas)
+```
+
+
+
