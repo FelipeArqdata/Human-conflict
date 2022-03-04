@@ -30,6 +30,7 @@ suppressPackageStartupMessages(library(knitr))
 #pacotes de plotagem
 #install.packages("SIBER")
 suppressPackageStartupMessages(library(SIBER))
+suppressPackageStartupMessages(library(ggplot2))
 
 
 ```
@@ -53,7 +54,7 @@ Separando dados do Centro-Sul do Peru
 dat.peru<-dat.both %>% filter(Region %in% c("South Coast","Central Coast","South Highlands","Central Highlands"))
 ```
 
-Separando dados do Norte do Chile
+Separando dados do Norte do Chile (_Não serão utilizados_)
 ```{r}
 #dat.chile<-dat.both %>% filter(Region%in%c("North Chile Coast","North Chile")) - NÃO SERÁ USADO
 ```
@@ -63,7 +64,9 @@ Manipulando dados do Centro-Sul do Peru, filtrando por cronologia (EIP,MH,LIP)
 dat.peru.temp <- dat.peru %>% filter(Period%in%c("Early Intermediate Period","Middle Horizon","Late Intermediate Period"))
 #View(dat.peru.temp)
 #write.csv(dat.peru.temp, "dadosisoperu.csv",row.names = FALSE)
+
 ```
+
 
 Preparando os dados para usar o pacote Siber para plotar elipses
 ```{r}
@@ -72,24 +75,251 @@ colnames(dat.siber) <- c("iso1", "iso2", "group","community")
 
 dat.siber.periods <- dat.siber [which(dat.siber$community == "Early Intermediate Period" | dat.siber$community == "Middle Horizon" | dat.siber$community == "Late Intermediate Period"),]
 
-#
+
+
+# criando subdatasets para gerar as elipses
 
 
 siber.eip <- dat.siber.periods %>% filter (community == "Early Intermediate Period")
 
 siber.mh <- dat.siber.periods %>% filter(community == "Middle Horizon")
 
+siber.lip <- dat.siber.periods %>% filter(community == "Late Intermediate Period")
 
+
+```
+
+```{r}
 siber.eip <- createSiberObject(siber.eip)
 #reorder the levels so they go Coastal, Mid-elevation, Highland
-siber.eip$original.data$group <- factor(siber.eip$original.data$group, levels = c("Coast al", "Mid-elevation", "Highland"))
+siber.eip$original.data$group <- factor(siber.eip$original.data$group, levels = c("Coastal", "Mid-elevation", "Highland"))
+
+siber.mh <- createSiberObject(siber.mh)
+
+siber.mh$original.data$group <- factor(siber.mh$original.data$group, levels = c("Coastal", "Mid-elevation","Highland"))# Amostras "Highland" da região do Titicaca foi considerada para comparações aproximadas
+
+siber.lip <- createSiberObject(siber.lip)
+
+siber.lip$original.data$group <- factor(siber.lip$original.data$group, levels = c("Coastal", "Mid-elevation", "Highland"))
+
+
+```
+
+Escolhendo cores rgb para a plotagem:
+
+```{r}
+coast.alpha <- rgb(68,1,84, max = 255, alpha = 60)
+midel.alpha <- rgb(33,144,140, max = 255, alpha = 60)
+highl.alpha <- rgb(253,231,37, max = 255, alpha = 90)
+```
+
+Plotando valores de Carbono e Nitrogênio com 95% de intervalo de confiança para cada categoria de elevação por período:
+
+```{r}
+# preparando parâmetros para os plots 
+
+#png("Siber_C_N_plots.png", width = 5, height = 3.5, units = 'in', res = 300)
+par(pty = "s", mfrow = c(2,3),oma = c(4,4,1,1),mar = c(1,1,1,1), xpd = NA)
+
+#Early Intermediate Period
+
+par(mar=c(0.5,1.5,1.5,1.5))
+
+plot(siber.eip$original.data$iso1, siber.eip$original.data$iso2, ylim = c(0,35), xlim =
+c(-25,-5), pch = 19, col = c(coast.alpha, midel.alpha, highl.alpha)[siber.eip$original.data$group], xlab = "", ylab = "", xaxt = "na")
+coords <- addEllipse(siber.eip$ML.mu[[1]][ , , 1],
+                    siber.eip$ML.cov[[1]][ , , 1],
+                    m = NULL,
+                    n = 100,
+                    p.interval = 0.95,
+                    ci.mean = FALSE,
+                    col = "#440154FF",
+                    lty = 1,
+                    lwd = 2)
+coords <- addEllipse(siber.eip$ML.mu[[1]][ , , 2],
+                    siber.eip$ML.cov[[1]][ , , 2],
+                    m = NULL,
+                    n = 100,
+                    p.interval = 0.95,
+                    ci.mean = FALSE,
+                    col = "#21908CFF",
+                    lty = 1,
+                    lwd = 2)
+coords <- addEllipse(siber.eip$ML.mu[[1]][ , , 3],
+                    siber.eip$ML.cov[[1]][ , , 3],
+                    m = NULL,
+                    n = 100,
+                    p.interval = 0.95,
+                    ci.mean = FALSE,
+                    col = "#FDE725FF",
+                    lty = 1,
+                    lwd = 2)
+text(-25, 0.5, labels = "Early Intermediate Period", pos = 4, cex = 0.75)
+mtext(text = expression({delta}^15*N~'\u2030'), side = 2, line = 3, at = -3, cex = 0.75)
+legend("topleft", bty="n", col=c("#440154FF", "#21908CFF", "#FDE725FF"), pch = 19, legend=c("Coastal", "Mid-elevation", "Highland"), cex = 0.75)
+
+#par(mar=c(0.5,1.5,1.5,1.5))
+
+plot(siber.mh$original.data$iso1, siber.mh$original.data$iso2, ylim = c(0,35), xlim =
+c(-25,-5), pch = 19, col = c(coast.alpha, midel.alpha, highl.alpha)[siber.mh$original.data$group], xlab = "", ylab = "", xaxt = "na")
+coords <- addEllipse(siber.mh$ML.mu[[1]][ , , 1],
+                    siber.mh$ML.cov[[1]][ , , 1],
+                    m = NULL,
+                    n = 100,
+                    p.interval = 0.95,
+                    ci.mean = FALSE,
+                    col = "#440154FF",
+                    lty = 1,
+                    lwd = 2)
+coords <- addEllipse(siber.mh$ML.mu[[1]][ , , 2],
+                    siber.mh$ML.cov[[1]][ , , 2],
+                    m = NULL,
+                    n = 100,
+                    p.interval = 0.95,
+                    ci.mean = FALSE,
+                    col = "#21908CFF",
+                    lty = 1,
+                    lwd = 2)
+coords <- addEllipse(siber.mh$ML.mu[[1]][ , , 3],
+                    siber.mh$ML.cov[[1]][ , , 3],
+                    m = NULL,
+                    n = 100,
+                    p.interval = 0.95,
+                    ci.mean = FALSE,
+                    col = "#FDE725FF",
+                    lty = 1,
+                    lwd = 2)
+
+text(-25, 0.5, labels = "Middle Horizon", pos = 4, cex = 0.75)
+
+#par(mar=c(0.5,1.5,1.5,1.5))
+
+plot(siber.lip$original.data$iso1, siber.lip$original.data$iso2, ylim = c(0,35), xlim =
+c(-25,-5), pch = 19, col = c(coast.alpha, midel.alpha, highl.alpha)[siber.lip$original.data$group], xlab = "", ylab = "", xaxt = "na")
+coords <- addEllipse(siber.lip$ML.mu[[1]][ , , 1],
+                    siber.lip$ML.cov[[1]][ , , 1],
+                    m = NULL,
+                    n = 100,
+                    p.interval = 0.95,
+                    ci.mean = FALSE,
+                    col = "#440154FF",
+                    lty = 1,
+                    lwd = 2)
+coords <- addEllipse(siber.lip$ML.mu[[1]][ , , 2],
+                    siber.lip$ML.cov[[1]][ , , 2],
+                    m = NULL,
+                    n = 100,
+                    p.interval = 0.95,
+                    ci.mean = FALSE,
+                    col = "#21908CFF",
+                    lty = 1,
+                    lwd = 2)
+coords <- addEllipse(siber.lip$ML.mu[[1]][ , , 3],
+                    siber.lip$ML.cov[[1]][ , , 3],
+                    m = NULL,
+                    n = 100,
+                    p.interval = 0.95,
+                    ci.mean = FALSE,
+                    col = "#FDE725FF",
+                    lty = 1,
+                    lwd = 2)
+
+text(-25, 0.5, labels = "Late Intermediate Period", pos = 4, cex = 0.75)
+
+```
 
 
 
+Dando seguimento a análise. Agora utilizando um dataset que contém somente dados da região centro-sul do Peru:
+
+```{r}
+data_isoperu <- read.csv("data_isoperu.csv",na.strings = "NA", sep = ";")
+data_isoperu <- data_isoperu %>% select(Site.ID:Citations)
+names(data_isoperu)
+#View(data_isoperu)
+```
+Separando dados de N e C para plotar distribuições
+```{r}
+data_N <- data_isoperu %>% mutate(C.b.coll.= NULL)
+data_C <- data_isoperu %>% mutate(N.b.coll.= NULL)
+#head(data_N)
+#head(data_C)
+```
+
+
+Checando distribuições de isotopo de N através do tempo para cada zona de elevação (nota: o Horizonte médio não contém amostras "Highland")
+
+```{r}
+data_N$med.date <-(data_N$Start.BP+data_N$End.BP)/2 # apresentar apenas a data média
+
+#filtrando individuos por fator de elevação
+
+N_coast <- data_N %>% filter(elev.factor == "Coastal") 
+
+N_midel <- data_N %>% filter(elev.factor == "Mid-elevation")
+
+N_high <- data_N %>% filter(elev.factor == "Highland")
+
+#plotando os histogramas
+
+par(mfrow = c(2,2))
+hist(data_N$med.date, xlab = "yBP", ylab = "N.Individuos", main = "", xlim = c(0,2000))
+mtext ("todos os individuos (n=833)", cex = 0.75)
+hist(N_coast$med.date, col = "#440154FF", xlab = "yBP", ylab = "N.Individuos", main = "", xlim = c(0,2000), ylim = c(0,300))
+mtext("Individuos da costa (n = 228", cex = 0.75)
+hist(N_midel$med.date, col = "#21908CFF", xlab = "yBP", ylab = "N.Individuos", main = "", xlim = c(0,2000), ylim = c(0,300))
+mtext("Individuos de média elevação (n = 531)", cex = 0.75)
+hist(N_high$med.date, col = "#FDE725FF", xlab = "yBP", ylab = "N.Individuos", main =
+"", xlim = c(0,2000), ylim = c(0,300))
+mtext("Individuos das terras altas (n = 74)", cex = 0.75)
 
 
 
 ```
 
+Aplicando o mesmo para o C:
 
-Escolhendo cores rgb para a plotagem
+```{r}
+data_C$med.date <-(data_N$Start.BP+data_N$End.BP)/2 # apresentar apenas a data média
+
+#filtrando individuos por fator de elevação
+
+C_coast <- data_N %>% filter(elev.factor == "Coastal") 
+
+C_midel <- data_N %>% filter(elev.factor == "Mid-elevation")
+
+C_high <- data_N %>% filter(elev.factor == "Highland")
+
+#plotando os histogramas
+
+par(mfrow = c(2,2))
+hist(data_C$med.date, xlab = "yBP", ylab = "N.Individuos", main = "", xlim = c(0,2000))
+mtext ("todos os individuos (n=833)", cex = 0.75)
+hist(C_coast$med.date, col = "#440154FF", xlab = "yBP", ylab = "N.Individuos", main = "", xlim = c(0,2000), ylim = c(0,300))
+mtext("Individuos da costa (n = 228", cex = 0.75)
+hist(C_midel$med.date, col = "#21908CFF", xlab = "yBP", ylab = "N.Individuos", main = "", xlim = c(0,2000), ylim = c(0,300))
+mtext("Individuos de média elevação (n = 531)", cex = 0.75)
+hist(C_high$med.date, col = "#FDE725FF", xlab = "yBP", ylab = "N.Individuos", main =
+"", xlim = c(0,2000), ylim = c(0,300))
+mtext("Individuos das terras altas (n = 74)", cex = 0.75)
+
+```
+
+
+
+
+
+
+
+Analisando dados por sexo:
+```{r}
+#Selecionando dados por sexo
+data_isosex <- data_isoperu %>% filter(Sex%in%c("M","F"))
+View(data_isosex)
+data_isoM <- data_isoperu %>% filter(Sex%in%c("M"))
+data_isoF <- data_isoperu %>% filter(Sex%in%c("F")) 
+
+
+```
+
+

@@ -32,6 +32,12 @@ dados_traumas <- read.csv("traumas.csv", na.strings = c("","NA"), sep = ";")
 names(dados_traumas)
 View(dados_traumas)
 ```
+```{r}
+data.tr.peru <- dados_traumas %>% filter(pais%in%c("Peru"))
+View(data.tr.peru)
+
+```
+
 
 
 
