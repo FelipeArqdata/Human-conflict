@@ -1,0 +1,139 @@
+---
+title: "Exploração e descrição estatítica dos dados de isótopos"
+author: "Felipe"
+date: "25/03/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Carregando pacotes de manipulação de dados.É necessário instalar os pacotes previamente antes de carregá-los, pacotes no R podem ser instalados usando install.packages("nome do pacote")
+
+```{r}
+#
+# 
+suppressPackageStartupMessages(library(plyr))
+suppressPackageStartupMessages(library(dplyr))
+suppressPackageStartupMessages(library(tidyr))
+suppressPackageStartupMessages(library(stringr))
+suppressPackageStartupMessages(library(stringi))
+suppressPackageStartupMessages(library(tidyverse))
+
+#exportando como arquivo html
+suppressPackageStartupMessages(library(knitr))
+
+#instalando e carregando pacotes de visualização 
+
+suppressPackageStartupMessages(if(!require(devtools)) install.packages("devtools"))
+devtools::install_github("kassambara/ggpubr")
+
+suppressPackageStartupMessages(library("ggpubr"))
+suppressPackageStartupMessages(library(corrplot))
+suppressPackageStartupMessages(library(RColorBrewer))
+
+```
+
+
+```{r}
+data_isoperu <- read.csv("data_isoperu.csv",na.strings = "NA", sep = ";")
+data_isoperu <- data_isoperu %>% select(Site.ID:Citations)
+names(data_isoperu)
+View(data_isoperu)
+```
+Checando normalidade nos dados 
+
+```{r}
+#isótopo de carbono
+ggdensity(data_isoperu$C.b.coll.,main = "Gráfico de densidade da consentração de carbono", xlab = "Carbono")
+ggdensity(data_isoperu$N.b.coll.,main = "Gráfico de densidade da consentração de Nitrogênio", xlab = "Nitrogênio")
+ggdensity(data_isoperu$Temp_Mean ,main = "Gráfico de densidade de temperatura média ", xlab = "Temperatura média")
+ggdensity(data_isoperu$Demography.kde.14c, main = "Gráfico de densidade demografia", xlab = "Densidade demográfica")
+
+```
+
+
+```{r}
+ggqqplot(data_isoperu$C.b.coll.)
+ggqqplot(data_isoperu$N.b.coll.)
+ggqqplot(data_isoperu$Demography.kde.14c)
+
+```
+
+Realizando teste de normalidade de Shapiro-Wilk
+```{r}
+shapiro.test(data_isoperu$C.b.coll.)
+shapiro.test(data_isoperu$N.b.coll.)
+```
+O teste indica que 
+
+
+Plotando gráfico de correlação de Spearman entre carbono e nitrogênio
+```{r}
+
+
+```
+
+
+Relizando testes de correlação em variáveis de interesse: 
+```{r}
+dat.correl <- data_isoperu %>% select(C.b.coll.,N.b.coll.,Temp_Mean,Precip_Mean,Temp_Mean_Seasonality,Precip_Mean_Seasonality,Demography)
+
+#dat.correl_c <- data_isoperu %>% mutate(N.b.coll.=NULL) %>% select(Temp_Mean,Precip_Mean,Temp_Mean_Seasonality,Precip_Mean_Seasonality,Demography.kde.14c)
+
+
+
+#names(data_isoperu)
+
+correl <- cor(dat.correl,method = "spearman")
+round(correl,2)
+```
+
+
+```{r}
+corrplot(correl, type="upper", order="hclust",
+         col=brewer.pal(n=8, name="RdYlBu"))
+
+#correl <- cor(dat.correl_c,method = "pearson")
+#corrplot(correl, type="upper", order="hclust",
+       #  col=brewer.pal(n=8, name="RdYlBu")
+
+```
+
+
+
+
+Testando correlação em períodos separados
+```{r}
+#selecionando dados por período:
+#Periodo interméfdio primeiro (pip), Horizonte médio (hm), Período intermédio tardio(pit)
+#A base de dados mostra os períodos em inglês
+
+#pip
+data.cor.pip <- data_isoperu %>% filter(Period%in%c("Early Intermediate Period")) %>% select(C.b.coll.,N.b.coll.,Temp_Mean,Precip_Mean,Temp_Mean_Seasonality,Precip_Mean_Seasonality,Demography.kde.14c)
+
+#hm
+data.cor.hm <- data_isoperu %>% filter(Period%in%c("Middle Horizon")) %>% select(C.b.coll.,N.b.coll.,Temp_Mean,Precip_Mean,Temp_Mean_Seasonality,Precip_Mean_Seasonality,Demography.kde.14c)
+
+#pit
+
+data.cor.pit <- data_isoperu %>% filter(Period%in%c("Late Intermediate Period")) %>% select(C.b.coll.,N.b.coll.,Temp_Mean,Precip_Mean,Temp_Mean_Seasonality,Precip_Mean_Seasonality,Demography.kde.14c)
+
+```
+
+```{r}
+correl.pip <- cor(data.cor.pip,method = "spearman")
+round(correl.pip,2)
+```
+
+```{r}
+correl.hm <- cor(data.cor.hm,method = "spearman")
+round(correl.hm,2)
+```
+```{r}
+correl.pit <- cor(data.cor.pit,method = "spearman")
+round(correl.pit,2)
+```
+
+
