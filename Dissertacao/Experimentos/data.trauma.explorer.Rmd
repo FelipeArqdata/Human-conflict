@@ -3,22 +3,22 @@ title: "Explorando os dados traumas"
 author: "Felipe"
 date: "25/02/2022"
 output:
-  
   html_document: default
   pdf_document: default
+  word_document: default
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE) #funC'C#o para criar a saC-da do documento
+knitr::opts_chunk$set(echo = TRUE) #função para criar o tipo de saída do documento
 ```
 
-Carregando bibliotecas para manipulaC'C#o de dados (nem todos foram utilizados atC) entC#o)
+Carregando bibliotecas para manipulação de dados 
 
 ```{r echo = FALSE}
-#C	 necessC!rio instalar as biliotecas antes de carreg??-las. Execute o seguinte padr??o de comando para instalar as bibliotecas: install.packages ("nome da bilioteca")
+# É	necessário instalar as biliotecas antes de carregá-las. Execute o seguinte padrão de comando para instalar as bibliotecas: install.packages ("nome da bilioteca")
 
-#carregando bibliotecas de manipular dados
-suppressPackageStartupMessages(library(plyr))
+#carregando bibliotecas de manipular dados com o supressor de alertas
+suppressPackageStartupMessages(library(plyr)) 
 suppressPackageStartupMessages(library(dplyr))
 suppressPackageStartupMessages(library(tidyr))
 suppressPackageStartupMessages(library(stringr))
@@ -26,29 +26,33 @@ suppressPackageStartupMessages(library(stringi))
 suppressPackageStartupMessages(library(tidyverse))
 suppressPackageStartupMessages(library(readr))
 
-#carregando bibliotecas para estatC-tica e visualizaC'C#o dos dados
+#carregando bibliotecas para descrição estatística e visualização
 
 suppressPackageStartupMessages(library(pastecs))
 
-#carregando biblioteca para criar a saC-da do documento
+#carregando biblioteca para criar a saída do documento
 suppressPackageStartupMessages(library(knitr))
 ```
-Carregando dados do arquivo "traumas.csv"
+
+
+Carregando dados do arquivo "traumas.csv":
 
 ```{r}
 
 dados_traumas <- read.csv("traumas.csv", na.strings = "NA", sep = ";") 
-names(dados_traumas) #execute este comando para ver os nomes das colunas/variC!veis presentes no banco de dados
+names(dados_traumas) #execute este comando para ver os nomes das colunas/variáveis presentes no banco de dados
+
 #View(dados_traumas) #execute para visualizar todo o conjunto de dados em uma tabela separada
+
 head(dados_traumas) 
 ```
 
-Filtrando dados do Peru  que contenha somente os 3 seguintes per??odos: PerC-odo IntermC)dio Primeiro (PIP), Horizonte MC)dio (HM), e PerC-odo IntermC)dio Tardio (PIT):
+Filtrando dados do Peru  que contenha somente os 3 seguintes períodos: Períoodo Intermédio Primeiro (PIP), Horizonte Médio (HM), e Período Intermédio Tardio (PIT):
 
 ```{r}
 # usando o operador pipe " %>% " da bilioteca tydiverse para manipular os dados:
 
-data.tr.peru <- dados_traumas %>% filter(pais%in%c("Peru"))%>% slice(-1) #a funC'C#o slice C) usada para remover a primeira linha que continha um dado do Arcaico
+data.tr.peru <- dados_traumas %>% filter(pais%in%c("Peru"))%>% slice(-1) #a função slice é usada para remover a primeira linha que continha um dado do Arcaico
                                            
 #View(data.tr.peru)
 #names(data.tr.peru)
@@ -56,15 +60,17 @@ head(data.tr.peru)
 
 ```
 
-# _Descri????o estat??stica dos dados:_
-Realizando descriC#o estatC-tica dos dados nC:mericos de interesse do estudo pela biblioteca ''' pastecs '''
+## _Descrição estatística dos dados:_
+
+Realizando descrição estatística dos dados númericos de interesse do estudo pela biblioteca "pastecs" 
 
 ```{r}
-#install.packages("pastecs") # execute para 
-
-# realizando descriC#o estatC-tica dos dados nC:mericos de interesse do estudo pela biblioteca ''' pastecs '''
-
-# n_id = nC:mero de individuos, n_id_traumas = nC:mero de indivC-duos com traumas, sem_traumas = nC:mero de indC-viduos sem traumas, n_id_antimortem = nC:mero de indivC-duos com traumas antimortem, n_id_perimortem = nC:mero de indivC-duos com traumas perimortem
+# A função summary também pode ser utilizada
+# n_id = número de individuos, 
+#n_id_traumas = número de indivíduos com traumas, 
+#sem_traumas = número de indivíduos sem traumas, 
+#n_id_antimortem = número de indivíduos com traumas antimortem, 
+#n_id_perimortem = número de indivíduos com traumas perimortem
 
 data_descr <- data.tr.peru %>% select(n_id,n_id_traumas,sem_traumas,n_id_antimortem,n_id_perimortem)
 
@@ -73,87 +79,120 @@ round(descr,2)
 
 ```
 
+
+
+Visualizando distribuição plotando boxplots
+Por período:
 ```{r}
+
+#plotando número de indivíduos por período:
 library(ggplot2)
-data.tr.peru %>% filter(!is.na(n_id))%>%
+data.tr.peru %>% filter(!is.na(n_id))%>% #retirando valores "NA" 
                 group_by(cronologia) %>% ggplot+geom_boxplot(aes(x=cronologia,y=n_id))
 
-#falta alterar tC-tulos e aparC*ncia 
+#falta alterar títulos e aparência
 ```
 
+
+
 ```{r}
+#plotanto número de indivíduos com traumas:
 data.tr.peru %>% filter(!is.na(n_id_traumas))%>%
                 group_by(cronologia) %>% ggplot+geom_boxplot(aes(x=cronologia,y=n_id_traumas))
 ```
 
 ```{r}
+#plotando número de indivíduos com traumas anitmortem
+
 data.tr.peru %>% filter(!is.na(n_id_antimortem))%>%
                 group_by(cronologia) %>% ggplot+geom_boxplot(aes(x=cronologia,y=n_id_antimortem))
 ```
 
 ```{r}
+#plotando número de indivíduos com traumas perimortem
+
 data.tr.peru %>% filter(!is.na(n_id_perimortem))%>%
                 group_by(cronologia) %>% ggplot+geom_boxplot(aes(x=cronologia,y=n_id_perimortem))
 ```
 
-
+Plotando gráfico de barras com a contagem de amostras por período
 ```{r}
+data.tr.peru %>% count(cronologia) %>% top_n(10,n) %>% ggplot()+geom_col(aes(x=cronologia,y=n)) 
+```
+
+Por sexo:
+```{r}
+# F = feminino
+# M = masculino
+# NID = não identificado
+#número de indivíduos
+
 data.tr.peru %>% filter(!is.na(n_id))%>%
                 group_by(sexo) %>%  ggplot+geom_boxplot(aes(x=sexo,y=n_id))
 ```
 
 
 ```{r}
+#número de indivíduos com traumas
 data.tr.peru %>% filter(!is.na(n_id_traumas))%>%
                 group_by(sexo) %>%  ggplot+geom_boxplot(aes(x=sexo,y=n_id_traumas))
 ```
 
 ```{r}
+#número de indivíduos com traumas antimortem
 data.tr.peru %>% filter(!is.na(n_id_antimortem))%>%
                 group_by(sexo) %>%  ggplot+geom_boxplot(aes(x=sexo,y=n_id_antimortem))
 ```
 
 ```{r}
+#número de indivíduos com traumas perimortem
 data.tr.peru %>% filter(!is.na(n_id_perimortem))%>%
                 group_by(sexo) %>%  ggplot+geom_boxplot(aes(x=sexo,y=n_id_perimortem))
 ```
-
-
 ```{r}
-names(data.tr.peru)
+data.tr.peru %>% count(sexo) %>% top_n(20,n) %>% ggplot()+geom_col(aes(x=sexo,y=n)) 
 ```
 
+
+Por região:
+
 ```{r}
+# númeoro de indivíduos
 data.tr.peru %>% filter(!is.na(n_id))%>% ggplot+geom_boxplot(aes(x=regiao,y=n_id))
 ```
 
 ```{r}
+#número de indivíduos com traumas
 data.tr.peru %>% filter(!is.na(n_id_traumas))%>% ggplot+geom_boxplot(aes(x=regiao,y=n_id_traumas))
-# os resultados mostram que o vale de majes concentra mais casos de traumas, no entanto, sC3 pussui 4 observaC'C5es, isso C) desproporcional em relaC'C#o ao restante
+# os resultados mostram que o vale de majes concentra mais casos de traumas, no entanto, só pussui 4 amostra sendo desproporcional em relação ao restante
 ```
 
 ```{r}
+#número de indivíduos com traumas antimortem
 data.tr.peru %>% filter(!is.na(n_id_antimortem))%>% ggplot+geom_boxplot(aes(x=regiao,y=n_id_antimortem))
 ```
 
 ```{r}
+#número de indivíduos com traumas perimortem
 data.tr.peru %>% filter(!is.na(n_id_perimortem))%>% ggplot+geom_boxplot(aes(x=regiao,y=n_id_perimortem))
 ```
 
-Testando a associaC'C#o entre as variaveis pelo teste Chiquadrado. Os dados foram previamente preparados em forma de tabelas de contigencia para permitir a aplicaC'C#o do teste:
+Testando a associação entre as variáveis pelo teste Chiquadrado. Os dados foram previamente preparados em forma de tabelas de contigência para permitir a aplicação do teste:
+
+obs: as tabelas referentes a somente a região e o período ainda não foram analisadas 
 
 ```{r}
-
 #carregando dados em tabela de contigencia para aplicar o chiquadrado
 
-#por regiC#o
-regiao <- read.csv("regiao_contigent.csv", sep = ";",row.names = 1) %>% slice(-3)  #usando a funC'C#o slice para retirar as linhas 3 correspondente a regiC#o do vale de lurin que nC#o possui dados pareados 
+#por região
+regiao <- read.csv("regiao_contigent.csv", sep = ";",row.names = 1) %>% slice(-3)  #usando a função slice para retirar as linhas 3 correspondentes a região do vale de Lurín que contém dados faltantes 
 View(regiao)
-#por regiC#o e sexo:
-regiao_sexo <- read.csv("regiao_sexo_contigent.csv", sep = ";", row.names = 1) %>% slice(-6,-7,-8) #usando a funC'C#o slice para retirar as linhas 7 e 8 correspondente a regiC#o do vale de lurin que nC#o possui dados pareados por sexo
-View(regiao_sexo)
+#por região e sexo:
+```
 
-#por periodo
+
+```{r}
+#por período
 periodo <- read.csv("periodo_contigent.csv", sep = ";")
 View(periodo)
 
@@ -161,22 +200,25 @@ View(periodo)
 
 ```
 
-Aplicando Chiquadrado e visualizaC'C5es grC!ficas das relaC'C5es entre variC!veis
+
 ```{r}
-#analisando dados de regiC#o por sC-tio:
+#analisando dados de região por sexo:
+
+regiao_sexo <- read.csv("regiao_sexo_contigent.csv", sep = ";", row.names = 1) %>% slice(-6,-7,-8) # aplicando a função slice para retirar as linhas 7 e 8 correspondentes a região do vale de Lurin que nC#o possui dados pareados por sexo
+#View(regiao_sexo)
+
 
 library("gplots") #usando o pacote de visualizaC'C#o dos dados matricial
 
-#selecionando apenas as  colunas de nC:mero de amostras, traumas e sem traumas (hC! ausencia de dados nas variC!veis antimortem e perimortem) e  convertendo dados em matriz:
+#selecionando apenas as  colunas de número de amostras, traumas e sem traumas (há ausência de dados nas variáveis antimortem e perimortem) e  convertendo dados em matriz:
 
 regiao_sexo_at <- regiao_sexo %>% select(n_id_traumas,sem_traumas)
 
-rg.sexo.matriz <- as.table(as.matrix(regiao_sexo_at))
+rg.sexo.matriz <- as.table(as.matrix(regiao_sexo_at)) #transformando os dados em tipo matriz
 
-#plotando grC!fico balloonplot 
+#plotando gráfico balloonplot 
 
-balloonplot(t(rg.sexo.matriz), main ="regiC#o por sexo", xlab ="", ylab="",
-            label = FALSE, show.margins = FALSE)
+balloonplot(t(rg.sexo.matriz), main ="região por sexo", xlab ="", ylab="",label = FALSE, show.margins = FALSE)
 
 ```
 ```{r}
@@ -184,6 +226,8 @@ balloonplot(t(rg.sexo.matriz), main ="regiC#o por sexo", xlab ="", ylab="",
 chisq <- chisq.test(rg.sexo.matriz)
 chisq
 ```
+_O resultado aponta que existe dependência entre as amostras, resta saber em quais pares de amostras especificamente_
+
 
 
 ```{r}
@@ -195,13 +239,13 @@ head(periodo_sexo)
 
 
 ```{r}
-periodo_sexo_at <- periodo_sexo %>% select(n_id_traumas,sem_traumas)
+periodo_sexo_at <- periodo_sexo %>% select(n_id_traumas,sem_traumas) #selecionando apenas as colunas que com valores númericos pareados
 
 pr.sexo.matriz <- as.table(as.matrix(periodo_sexo_at))
 
-#plotando grC!fico balloonplot 
+#plotando gráfico balloonplot 
 
-balloonplot(t(pr.sexo.matriz), main ="perC-odo por sexo", xlab ="", ylab="",
+balloonplot(t(pr.sexo.matriz), main ="período por sexo", xlab ="", ylab="",
             label = FALSE, show.margins = FALSE)
 
 ```
@@ -211,38 +255,4 @@ balloonplot(t(pr.sexo.matriz), main ="perC-odo por sexo", xlab ="", ylab="",
 chisq <- chisq.test(pr.sexo.matriz)
 chisq
 ```
-
-Aplicando teste Kruskal-Wallis (TC ERRADO, CONCERTA)
-```{r}
-periodo.sexo.kw <-read.csv("periodo_sexo_contigent.csv", sep = ";")#, stringsAsFactors = TRUE) %>% slice(-6)
-
-#levels(periodo.sexo.kw$Periodo)
-
-kruskal.test(Periodo ~ n_id_traumas , data= periodo.sexo.kw)
-#levels(periodo_sexo_at$)
-
-
-
-```
-```{r}
-kruskal.test(n_id_antimortem ~ Periodo, data= periodo.sexo.kw)
-```
-
-```{r}
-kruskal.test(n_id_perimortem ~ Periodo, data= periodo.sexo.kw)
-```
-
-```{r}
-kruskal.test(n_id ~ Periodo, data= periodo.sexo.kw)
-```
-
-
-```{r}
-pairwise.wilcox.test(periodo.sexo.kw$n_id_traumas,periodo.sexo.kw$Periodo)
-# p.adjust.method ="BH")
-
-
-```
-
-
 

@@ -1,8 +1,10 @@
 ---
-title: "ExploraC'C#o dos dados de isC3topos do trabalho de Wilson et al 2022"
+title: "Replicação das análises dos dados de isótopos do trabalho de Wilson et al 2022"
 author: "Felipe"
 date: "24/03/2022"
-output: html_document
+output:
+  word_document: default
+  html_document: default
 ---
 
 ```{r setup, include=FALSE}
@@ -21,30 +23,29 @@ suppressPackageStartupMessages(library(stringr))
 suppressPackageStartupMessages(library(stringi))
 suppressPackageStartupMessages(library(tidyverse))
 
-#exporting as an html file
 suppressPackageStartupMessages(library(knitr))
 
 ```
 
 ```{r message = FALSE , warning = FALSE}
-#Pacotes de anC!lises
-suppressPackageStartupMessages(library(corrplot))#used to plot correlation matrices
-suppressPackageStartupMessages(library(ranger))#random forest regression
-suppressPackageStartupMessages(library(iml))#package used to calculate the effect sizes,including Friedman's h-stat
-suppressPackageStartupMessages(library(spm))#cross-validation on ranger RF
-suppressPackageStartupMessages(library(phenocamr))#package for calculating optimal span using BIC
-suppressPackageStartupMessages(library(ape))#use for calculating Moran's I of the residu als to test for spatial autocorrelation
-suppressPackageStartupMessages(library(sf))#use for setting up data for cross-validation
+#Pacotes de análises
+suppressPackageStartupMessages(library(corrplot))# para plotar matriz de correlação
+suppressPackageStartupMessages(library(ranger))# biblioteca de árvore de regressão  regression
+suppressPackageStartupMessages(library(iml))# para cálcular o tamnho do efeito 
+suppressPackageStartupMessages(library(spm))
+suppressPackageStartupMessages(library(phenocamr))
+suppressPackageStartupMessages(library(ape))
+suppressPackageStartupMessages(library(sf))
+#pacotes de plotagem 
 
-#pacotes de plotagem
 #install.packages("SIBER")
-suppressPackageStartupMessages(library(SIBER))
+suppressPackageStartupMessages(library(SIBER)) #pacote para plotar elipses 
 suppressPackageStartupMessages(library(ggplot2))
 
 
 ```
 
-PreparaC'C#o dos dados
+Preparação dos dados
 
 ```{r}
 library(readr)
@@ -52,7 +53,7 @@ dat <- read.csv("iso_andesdois.csv", na.strings = c("","NA"))
 names(dat)
 #View(dat)
 ```
-Separando dados de isC3topos de carbono e nitrogC*nio sem valores "NA"
+Separando dados de isótopos de carbono e nitrogênio sem valores "NA"
 ```{r}
 dat.both<-dat[which(dat$N.b.coll.!= "NA" & dat$C.b.coll. != "NA"),] 
 # selecionando os dados de N e C sem os valores NA
@@ -101,7 +102,7 @@ siber.eip$original.data$group <- factor(siber.eip$original.data$group, levels = 
 
 siber.mh <- createSiberObject(siber.mh)
 
-siber.mh$original.data$group <- factor(siber.mh$original.data$group, levels = c("Coastal", "Mid-elevation","Highland"))# Amostras "Highland" da regiC#o do Titicaca foi considerada para comparaC'C5es aproximadas
+siber.mh$original.data$group <- factor(siber.mh$original.data$group, levels = c("Coastal", "Mid-elevation","Highland"))# Amostras "Highland" da região do Titicaca foi considerada para comparações aproximadas
 
 siber.lip <- createSiberObject(siber.lip)
 
@@ -118,10 +119,10 @@ midel.alpha <- rgb(33,144,140, max = 255, alpha = 60)
 highl.alpha <- rgb(253,231,37, max = 255, alpha = 90)
 ```
 
-Plotando valores de Carbono e NitrogC*nio com 95% de intervalo de confianC'a para cada categoria de elevaC'C#o por perC-odo:
+Plotando valores de Carbono e Nitrogênio com 95% de intervalo de confiança para cada categoria de elevação por período:
 
 ```{r}
-# preparando parC"metros para os plots 
+# preparando parâmetros para os plots 
 
 #png("Siber_C_N_plots.png", width = 5, height = 3.5, units = 'in', res = 300)
 par(pty = "s", mfrow = c(2,3),oma = c(4,4,1,1),mar = c(1,1,1,1), xpd = NA)
@@ -232,10 +233,10 @@ coords <- addEllipse(siber.lip$ML.mu[[1]][ , , 3],
 text(-25, 0.5, labels = "Late Intermediate Period", pos = 4, cex = 0.75)
 
 ```
+(obs: ainda preciso entender porque não está aparecendo o gráfico do período "Late Intermediate Period", e porque também não está aparecendo o rótulo da concentração de carbono no eixo X)
 
 
-
-Dando seguimento a anC!lise. Agora utilizando um dataset que contC)m somente dados da regiC#o centro-sul do Peru:
+Dando seguimento a análise. Agora utilizando um dataset que contémm somente dados da região centro-sul do Peru que foi previamente preparado 
 
 ```{r}
 data_isoperu <- read.csv("data_isoperu.csv",na.strings = "NA", sep = ";")
@@ -243,7 +244,7 @@ data_isoperu <- data_isoperu %>% select(Site.ID:Citations)
 names(data_isoperu)
 #View(data_isoperu)
 ```
-Separando dados de N e C para plotar distribuiC'C5es
+Separando dados de N e C para plotar distribuições em histograma
 ```{r}
 data_N <- data_isoperu %>% mutate(C.b.coll.= NULL)
 data_C <- data_isoperu %>% mutate(N.b.coll.= NULL)
@@ -252,12 +253,12 @@ data_C <- data_isoperu %>% mutate(N.b.coll.= NULL)
 ```
 
 
-Checando distribuiC'C5es de isotopo de N atravC)s do tempo para cada zona de elevaC'C#o (nota: o Horizonte mC)dio nC#o contC)m amostras "Highland")
+Checando distribuições de isotopo de Nitrogênio através do tempo para cada zona de elevação (nota: o Horizonte Médio não contém amostras "Highland")
 
 ```{r}
-data_N$med.date <-(data_N$Start.BP+data_N$End.BP)/2 # apresentar apenas a data mC)dia
+data_N$med.date <-(data_N$Start.BP+data_N$End.BP)/2 # apresentar apenas a data média
 
-#filtrando individuos por fator de elevaC'C#o
+#filtrando indivíduos por fator de elevação
 
 N_coast <- data_N %>% filter(elev.factor == "Coastal") 
 
@@ -282,12 +283,12 @@ mtext("Individuos das terras altas (n = 74)", cex = 0.75)
 
 ```
 
-Aplicando o mesmo para o C:
+Aplicando o mesmo para o Carbono:
 
 ```{r}
-data_C$med.date <-(data_N$Start.BP+data_N$End.BP)/2 # apresentar apenas a data mC)dia
+data_C$med.date <-(data_N$Start.BP+data_N$End.BP)/2 # apresentar apenas a data média
 
-#filtrando individuos por fator de elevaC'C#o
+#filtrando individuos por fator de elevação
 
 C_coast <- data_N %>% filter(elev.factor == "Coastal") 
 
@@ -298,7 +299,7 @@ C_high <- data_N %>% filter(elev.factor == "Highland")
 #plotando os histogramas
 
 par(mfrow = c(2,2))
-hist(data_C$med.date, xlab = "yBP", ylab = "N.Individuos", main = "", xlim = c(0,2000))
+hist(data_C$med.date, xlab = "yBP", ylab = "N.Individuos", main = "", xlim = c(0,2000))# limitando o eixo X atpe 2000 anos
 mtext ("todos os individuos (n=833)", cex = 0.75)
 hist(C_coast$med.date, col = "#440154FF", xlab = "yBP", ylab = "N.Individuos", main = "", xlim = c(0,2000), ylim = c(0,300))
 mtext("Individuos da costa (n = 228", cex = 0.75)
@@ -309,7 +310,7 @@ hist(C_high$med.date, col = "#FDE725FF", xlab = "yBP", ylab = "N.Individuos", ma
 mtext("Individuos das terras altas (n = 74)", cex = 0.75)
 
 ```
-Verificando colinearidade entre as variC!veis:
+Verificando colinearidade entre as variáveis:
 ```{r}
 cor.mtest <- function(mat) {
   mat <- as.matrix(mat)
@@ -350,6 +351,8 @@ corrplot(cm,
         p.mat = p.mat, sig.level = 0.05, insig = "blank"
       )
 ```
+(obs: ainda não entendi porque o primeiro bloco do código foi necessário, e o porque foi usado dois loops for)
+
 Colinearidade para carbono (C)
 
 ```{r}
@@ -393,6 +396,8 @@ corrplot(cm,
       )
 ```
 
+
+Aplicando o modelo de árvore de regressão:
 ```{r}
 dat.N <- data_N %>%
         dplyr::select(N.b.coll.,

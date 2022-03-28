@@ -1,8 +1,10 @@
 ---
-title: "Exploração e descrição estatítica dos dados de isótopos"
+title: "Exploração e descrição estatística dos dados de isótopos"
 author: "Felipe"
 date: "25/03/2022"
-output: html_document
+output:
+  html_document: default
+  word_document: default
 ---
 
 ```{r setup, include=FALSE}
@@ -35,14 +37,14 @@ suppressPackageStartupMessages(library(RColorBrewer))
 
 ```
 
-
+Carregando os dados:
 ```{r}
 data_isoperu <- read.csv("data_isoperu.csv",na.strings = "NA", sep = ";")
 data_isoperu <- data_isoperu %>% select(Site.ID:Citations)
 names(data_isoperu)
-View(data_isoperu)
+#View(data_isoperu)
 ```
-Checando normalidade nos dados 
+Checando normalidade nos dados por gráficos de densidade:
 
 ```{r}
 #isótopo de carbono
@@ -54,6 +56,7 @@ ggdensity(data_isoperu$Demography.kde.14c, main = "Gráfico de densidade demogra
 ```
 
 
+Testando normalidade com qqplot:
 ```{r}
 ggqqplot(data_isoperu$C.b.coll.)
 ggqqplot(data_isoperu$N.b.coll.)
@@ -61,12 +64,12 @@ ggqqplot(data_isoperu$Demography.kde.14c)
 
 ```
 
-Realizando teste de normalidade de Shapiro-Wilk
+Realizando teste de normalidade pelo método Shapiro-Wilk
 ```{r}
 shapiro.test(data_isoperu$C.b.coll.)
 shapiro.test(data_isoperu$N.b.coll.)
 ```
-O teste indica que 
+O teste indica que as amostras de Carbono e Nitrogênio não estão normalmente distribuidos
 
 
 Plotando gráfico de correlação de Spearman entre carbono e nitrogênio
@@ -78,7 +81,7 @@ Plotando gráfico de correlação de Spearman entre carbono e nitrogênio
 
 Relizando testes de correlação em variáveis de interesse: 
 ```{r}
-dat.correl <- data_isoperu %>% select(C.b.coll.,N.b.coll.,Temp_Mean,Precip_Mean,Temp_Mean_Seasonality,Precip_Mean_Seasonality,Demography)
+dat.correl <- data_isoperu %>% select(C.b.coll.,N.b.coll.,Temp_Mean,Precip_Mean,Temp_Mean_Seasonality,Precip_Mean_Seasonality,Demography.kde.14c)
 
 #dat.correl_c <- data_isoperu %>% mutate(N.b.coll.=NULL) %>% select(Temp_Mean,Precip_Mean,Temp_Mean_Seasonality,Precip_Mean_Seasonality,Demography.kde.14c)
 
@@ -90,9 +93,9 @@ correl <- cor(dat.correl,method = "spearman")
 round(correl,2)
 ```
 
-
+Plotando gráfico de correlação entre variáveis:
 ```{r}
-corrplot(correl, type="upper", order="hclust",
+corrplot(correl, method = c("color"), type="upper", order="hclust",
          col=brewer.pal(n=8, name="RdYlBu"))
 
 #correl <- cor(dat.correl_c,method = "pearson")
@@ -108,6 +111,7 @@ Testando correlação em períodos separados
 ```{r}
 #selecionando dados por período:
 #Periodo interméfdio primeiro (pip), Horizonte médio (hm), Período intermédio tardio(pit)
+
 #A base de dados mostra os períodos em inglês
 
 #pip
@@ -127,13 +131,32 @@ correl.pip <- cor(data.cor.pip,method = "spearman")
 round(correl.pip,2)
 ```
 
+
+
+```{r}
+corrplot(correl.pip,method = c("color"), type="upper", order="hclust",
+         col=brewer.pal(n=8, name="RdYlBu"))
+
+```
+
+
 ```{r}
 correl.hm <- cor(data.cor.hm,method = "spearman")
 round(correl.hm,2)
 ```
 ```{r}
+corrplot(correl.hm, method = c("color"), type="upper", order="hclust",
+         col=brewer.pal(n=8, name="RdYlBu"))
+```
+
+
+```{r}
 correl.pit <- cor(data.cor.pit,method = "spearman")
 round(correl.pit,2)
+```
+```{r}
+corrplot(correl.pit, method = c("color"), type="upper", order="hclust",
+         col=brewer.pal(n=8, name="RdYlBu"))
 ```
 
 
