@@ -1,0 +1,39 @@
+referência;pais;regiao;sitio;lat;long;elev;cultura;cronologia;data_absBP_ inicial;data_absBP_final;sexo;faixa_idade;patologia;osso;n_id;n_id_afetados;n_amostra;n_afetado;obs
+Bey et al 2011;Peru;Cusco;Akawillay;-13,4493;-72,16891;3454;Wari;HM;;;M;adulto;dent_caries;;;;46;6;amostra contem adultos subadultos e nao distingue sexo
+Bey et al 2011;Peru;Cusco;Akawillay;-13,4493;-72,16891;3454;Wari;HM;;;M;adulto;dent_abcessos;;;;46;4;amostra contem adultos subadultos e nao distingue sexo
+Bey et al 2011;Peru;Cusco;Akawillay;-13,4493;-72,16891;3454;Wari;HM;;;M;adulto;dent_desgaste;;;;46;5;amostra contem adultos subadultos e nao distingue sexo
+Bey et al 2011;Peru;Cusco;Akawillay;-13,4493;-72,16891;3454;Wari;HM;;;M;adulto;PH;;;;41;5;amostra contem adultos subadultos e nao distingue sexo
+Bey et al 2011;Peru;Cusco;Akawillay;-13,4493;-72,16891;3454;Wari;HM;;;M;adulto;Periostosis;;;;66;9;amostra contem adultos subadultos e nao distingue sexo
+Bey et al 2011;Peru;Cusco;Akawillay;-13,4493;-72,16891;3454;Wari;HM;;;M;adulto;Osteoartrites;;;;31;6;amostra contem adultos subadultos e nao distingue sexo
+Bey et al 2011;Peru;Cusco;Akawillay;-13,4493;-72,16891;3454;Wari;HM;;;F;adulto;dent_caries;;;;46;7;amostra contem adultos subadultos e nao distingue sexo
+Bey et al 2011;Peru;Cusco;Akawillay;-13,4493;-72,16891;3454;Wari;HM;;;F;adulto;dent_abcessos;;;;46;8;amostra contem adultos subadultos e nao distingue sexo
+Bey et al 2011;Peru;Cusco;Akawillay;-13,4493;-72,16891;3454;Wari;HM;;;F;adulto;dent_desgaste;;;;46;9;amostra contem adultos subadultos e nao distingue sexo
+Bey et al 2011;Peru;Cusco;Akawillay;-13,4493;-72,16891;3454;Wari;HM;;;F;adulto;PH;;;;41;6;amostra contem adultos subadultos e nao distingue sexo
+Bey et al 2011;Peru;Cusco;Akawillay;-13,4493;-72,16891;3454;Wari;HM;;;F;adulto;CO;;;;27;1;amostra contem adultos subadultos e nao distingue sexo
+Bey et al 2011;Peru;Cusco;Akawillay;-13,4493;-72,16891;3454;Wari;HM;;;F;adulto;Periostosis;;;;66;7;amostra contem adultos subadultos e nao distingue sexo
+Bey et al 2011;Peru;Cusco;Akawillay;-13,4493;-72,16891;3454;Wari;HM;;;F;adulto;Osteoartrites;;;;31;9;amostra contem adultos subadultos e nao distingue sexo
+Bey et al 2011;Peru;Cusco;Akawillay;-13,4493;-72,16891;3454;Wari;HM;;;NID;adulto;dent_caries;;;;46;2;amostra contem adultos subadultos e nao distingue sexo
+Bey et al 2011;Peru;Cusco;Akawillay;-13,4493;-72,16891;3454;Wari;HM;;;NID;adulto;dent_desgaste;;;;46;2;amostra contem adultos subadultos e nao distingue sexo
+Bey et al 2011;Peru;Cusco;Akawillay;-13,4493;-72,16891;3454;Wari;HM;;;NID;adulto;Periostosis;;;;66;1;amostra contem adultos subadultos e nao distingue sexo
+Bey et al 2011;Peru;Cusco;Akawillay;-13,4493;-72,16891;3454;Wari;HM;;;NID;adulto;Osteoartrites;;;;31;2;amostra contem adultos subadultos e nao distingue sexo
+Juendst e Skidmore 2016;Peru;Cusco;Hatun Cotuyoc;-13,6703;-71,6724;3102;Wari;HM;;;ambos;adulto;dent_caries_abcessos;;18;10;;;nao contem numero de amostra por especime. apenas por individiduos nao separados por sexo
+Juendst e Skidmore 2016;Peru;Cusco;Hatun Cotuyoc;-13,6703;-71,6724;3102;Wari;HM;;;ambos;adulto;Periostosis;;18;6;;;nao contem numero de amostra por especime. apenas por individiduos nao separados por sexo
+Juendst e Skidmore 2016;Peru;Cusco;Hatun Cotuyoc;-13,6703;-71,6724;3102;Wari;HM;;;ambos;adulto;Osteoartrites;;18;4;;;nao contem numero de amostra por especime. apenas por individiduos nao separados por sexo
+Tribbett e Tung 2010;Peru;Cusco;Huari;-13,0647;-74,1747;;Wari;HM;;;ambos;adulto;lesao_caries;maxila;;;57;12;
+Tribbett e Tung 2010;Peru;Cusco;Huari;-13,0647;-74,1747;;Wari;HM;;;ambos;adulto;lesao_caries;mandibula;;;93;28;
+Tribbett e Tung 2010;Peru;Cusco;Huari;-13,0647;-74,1747;;Wari;HM;;;ambos;adulto;lesao_abcesso;maxila;;;96;20;
+Tribbett e Tung 2010;Peru;Cusco;Huari;-13,0647;-74,1747;;Wari;HM;;;ambos;adulto;lesao_abcesso;mandibula;;;165;43;
+Tribbett e Tung 2010;Peru;Cusco;Huari;-13,0647;-74,1747;;Wari;HM;;;ambos;adulto;perda_dente;maxila;;;94;37;
+Tribbett e Tung 2010;Peru;Cusco;Huari;-13,0647;-74,1747;;Wari;HM;;;ambos;adulto;perda_dente;mandibula;;;162;100;
+Scaffid 2018;Peru;Vale de majes;Uraca;-16,3386;-72,4785;;Wari;HM;;;M;adulto;CO;orbita_ocular;63;18;;;
+Scaffid 2018;Peru;Vale de majes;Uraca;-16,3386;-72,4785;;Wari;HM;;;F;adulto;CO;orbita_ocular;32;12;;;
+Scaffid 2018;Peru;Vale de majes;Uraca;-16,3386;-72,4785;;Wari;HM;;;M;adulto;PH;calota_cranio;62;57;;;
+Scaffid 2018;Peru;Vale de majes;Uraca;-16,3386;-72,4785;;Wari;HM;;;F;adulto;PH;calota_cranio;31;28;;;
+Tung e Castillo 2005;Peru;Vale de majes;Beringa;-16,1447;-72,4628;;Wari;HM;;;M;adulto;CO;orbita_ocular;6;1;;;
+Tung e Castillo 2005;Peru;Vale de majes;Beringa;-16,1447;-72,4628;;Wari;HM;;;F;adulto;CO;orbita_ocular;7;2;;;
+Tung e Castillo 2005;Peru;Vale de majes;Beringa;-16,1447;-72,4628;;Wari;HM;;;NID;adulto;CO;orbita_ocular;9;2;;;
+Tung e Castillo 2005;Peru;Vale de majes;Beringa;-16,1447;-72,4628;;Wari;HM;;;M;adulto;dent_caries;dente;8;4;;;
+Tung e Castillo 2005;Peru;Vale de majes;Beringa;-16,1447;-72,4628;;Wari;HM;;;F;adulto;dent_caries;dente;7;3;;;
+Tung e Castillo 2005;Peru;Vale de majes;Beringa;-16,1447;-72,4628;;Wari;HM;;;NID;adulto;dent_abcessos;dente;27;8;;;
+Tung e Castillo 2005;Peru;Vale de majes;Beringa;-16,1447;-72,4628;;Wari;HM;;;M;adulto;perda_dente;mandibula;8;5;;;
+Tung e Castillo 2005;Peru;Vale de majes;Beringa;-16,1447;-72,4628;;Wari;HM;;;F;adulto;perda_dente;mandibula;13;7;;;

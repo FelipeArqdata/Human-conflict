@@ -35,30 +35,20 @@ suppressPackageStartupMessages(library(knitr))
 ```
 
 
-Carregando dados do arquivo "traumas.csv":
+Carregando dados do arquivo  "traumas_centrosul_total.csv" correspondente a dados do centro-sul do Peru entre os períodos PIP,HM e PIT:
+obs: a partir da linha 48 o banco contém dados de frequencia coletados por trabalhos que não foi possível obter acesso direto.
 
 ```{r}
 
-dados_traumas <- read.csv("traumas.csv", na.strings = "NA", sep = ";") 
+dados_traumas <- read.csv("traumas_centrosul_total.csv", na.strings = "NA", sep = ";") 
 names(dados_traumas) #execute este comando para ver os nomes das colunas/variáveis presentes no banco de dados
 
-#View(dados_traumas) #execute para visualizar todo o conjunto de dados em uma tabela separada
+View(dados_traumas) #execute para visualizar todo o conjunto de dados em uma tabela separada
 
 head(dados_traumas) 
 ```
 
-Filtrando dados do Peru  que contenha somente os 3 seguintes períodos: Períoodo Intermédio Primeiro (PIP), Horizonte Médio (HM), e Período Intermédio Tardio (PIT):
 
-```{r}
-# usando o operador pipe " %>% " da bilioteca tydiverse para manipular os dados:
-
-data.tr.peru <- dados_traumas %>% filter(pais%in%c("Peru"))%>% slice(-1) #a função slice é usada para remover a primeira linha que continha um dado do Arcaico
-                                           
-#View(data.tr.peru)
-#names(data.tr.peru)
-head(data.tr.peru)
-
-```
 
 ## _Descrição estatística dos dados:_
 
@@ -72,7 +62,7 @@ Realizando descrição estatística dos dados númericos de interesse do estudo 
 #n_id_antimortem = número de indivíduos com traumas antimortem, 
 #n_id_perimortem = número de indivíduos com traumas perimortem
 
-data_descr <- data.tr.peru %>% select(n_id,n_id_traumas,sem_traumas,n_id_antimortem,n_id_perimortem)
+data_descr <- dados_traumas %>% select(n_id,n_id_naoafetados,n_id_afetados,n_id_antimortem,n_id_perimortem,n_tr_anterior,n_tr_posterior)
 
 descr <- stat.desc(data_descr)
 round(descr,2)
@@ -87,7 +77,7 @@ Por período:
 
 #plotando número de indivíduos por período:
 library(ggplot2)
-data.tr.peru %>% filter(!is.na(n_id))%>% #retirando valores "NA" 
+dados_traumas %>% filter(!is.na(n_id))%>% #retirando valores "NA" 
                 group_by(cronologia) %>% ggplot+geom_boxplot(aes(x=cronologia,y=n_id))
 
 #falta alterar títulos e aparência
@@ -97,27 +87,27 @@ data.tr.peru %>% filter(!is.na(n_id))%>% #retirando valores "NA"
 
 ```{r}
 #plotanto número de indivíduos com traumas:
-data.tr.peru %>% filter(!is.na(n_id_traumas))%>%
-                group_by(cronologia) %>% ggplot+geom_boxplot(aes(x=cronologia,y=n_id_traumas))
+dados_traumas %>% filter(!is.na(n_id_afetados))%>%
+                group_by(cronologia) %>% ggplot+geom_boxplot(aes(x=cronologia,y=n_id_afetados))
 ```
 
 ```{r}
 #plotando número de indivíduos com traumas anitmortem
 
-data.tr.peru %>% filter(!is.na(n_id_antimortem))%>%
+dados_traumas %>% filter(!is.na(n_id_antimortem))%>%
                 group_by(cronologia) %>% ggplot+geom_boxplot(aes(x=cronologia,y=n_id_antimortem))
 ```
 
 ```{r}
 #plotando número de indivíduos com traumas perimortem
 
-data.tr.peru %>% filter(!is.na(n_id_perimortem))%>%
+dados_traumas %>% filter(!is.na(n_id_perimortem))%>%
                 group_by(cronologia) %>% ggplot+geom_boxplot(aes(x=cronologia,y=n_id_perimortem))
 ```
 
 Plotando gráfico de barras com a contagem de amostras por período
 ```{r}
-data.tr.peru %>% count(cronologia) %>% top_n(10,n) %>% ggplot()+geom_col(aes(x=cronologia,y=n)) 
+dados_traumas %>% count(cronologia) %>% top_n(10,n) %>% ggplot()+geom_col(aes(x=cronologia,y=n)) 
 ```
 
 Por sexo:
@@ -127,30 +117,32 @@ Por sexo:
 # NID = não identificado
 #número de indivíduos
 
-data.tr.peru %>% filter(!is.na(n_id))%>%
+
+dados_traumas %>% filter(!is.na(n_id))%>%
                 group_by(sexo) %>%  ggplot+geom_boxplot(aes(x=sexo,y=n_id))
+##Lembrar de diminuir a escala do gráfico
 ```
 
 
 ```{r}
 #número de indivíduos com traumas
-data.tr.peru %>% filter(!is.na(n_id_traumas))%>%
-                group_by(sexo) %>%  ggplot+geom_boxplot(aes(x=sexo,y=n_id_traumas))
+dados_traumas %>% filter(!is.na(n_id_afetados))%>%
+                group_by(sexo) %>%  ggplot+geom_boxplot(aes(x=sexo,y=n_id_afetados))
 ```
 
 ```{r}
 #número de indivíduos com traumas antimortem
-data.tr.peru %>% filter(!is.na(n_id_antimortem))%>%
+dados_traumas %>% filter(!is.na(n_id_antimortem))%>%
                 group_by(sexo) %>%  ggplot+geom_boxplot(aes(x=sexo,y=n_id_antimortem))
 ```
 
 ```{r}
 #número de indivíduos com traumas perimortem
-data.tr.peru %>% filter(!is.na(n_id_perimortem))%>%
+dados_traumas %>% filter(!is.na(n_id_perimortem))%>%
                 group_by(sexo) %>%  ggplot+geom_boxplot(aes(x=sexo,y=n_id_perimortem))
 ```
 ```{r}
-data.tr.peru %>% count(sexo) %>% top_n(20,n) %>% ggplot()+geom_col(aes(x=sexo,y=n)) 
+dados_traumas %>% count(sexo) %>% top_n(20,n) %>% ggplot()+geom_col(aes(x=sexo,y=n)) 
 ```
 
 
@@ -158,28 +150,29 @@ Por região:
 
 ```{r}
 # númeoro de indivíduos
-data.tr.peru %>% filter(!is.na(n_id))%>% ggplot+geom_boxplot(aes(x=regiao,y=n_id))
+dados_traumas %>% filter(!is.na(n_id))%>% ggplot+geom_boxplot(aes(x=regiao,y=n_id))
 ```
 
 ```{r}
 #número de indivíduos com traumas
-data.tr.peru %>% filter(!is.na(n_id_traumas))%>% ggplot+geom_boxplot(aes(x=regiao,y=n_id_traumas))
+dados_traumas %>% filter(!is.na(n_id_afetados))%>% ggplot+geom_boxplot(aes(x=regiao,y=n_id_afetados))
 # os resultados mostram que o vale de majes concentra mais casos de traumas, no entanto, só pussui 4 amostra sendo desproporcional em relação ao restante
 ```
 
 ```{r}
 #número de indivíduos com traumas antimortem
-data.tr.peru %>% filter(!is.na(n_id_antimortem))%>% ggplot+geom_boxplot(aes(x=regiao,y=n_id_antimortem))
+dados_traumas %>% filter(!is.na(n_id_antimortem))%>% ggplot+geom_boxplot(aes(x=regiao,y=n_id_antimortem))
 ```
 
 ```{r}
 #número de indivíduos com traumas perimortem
-data.tr.peru %>% filter(!is.na(n_id_perimortem))%>% ggplot+geom_boxplot(aes(x=regiao,y=n_id_perimortem))
+dados_traumas %>% filter(!is.na(n_id_perimortem))%>% ggplot+geom_boxplot(aes(x=regiao,y=n_id_perimortem))
 ```
 
 Testando a associação entre as variáveis pelo teste Chiquadrado. Os dados foram previamente preparados em forma de tabelas de contigência para permitir a aplicação do teste:
 
-obs: as tabelas referentes a somente a região e o período ainda não foram analisadas 
+obs1:as tabelas não contabiliza os dados de frequencia dos trabalhos que não foi possivel o acesso (precisa atualizar)
+obs2: as tabelas referentes a somente a região e o período ainda não foram analisadas 
 
 ```{r}
 #carregando dados em tabela de contigencia para aplicar o chiquadrado

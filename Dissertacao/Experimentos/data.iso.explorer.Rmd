@@ -39,10 +39,10 @@ suppressPackageStartupMessages(library(RColorBrewer))
 
 Carregando os dados:
 ```{r}
-data_isoperu <- read.csv("data_isoperu.csv",na.strings = "NA", sep = ";")
+data_isoperu <- read.csv("data_iso_centrosul.csv",na.strings = "NA", sep = ";")
 data_isoperu <- data_isoperu %>% select(Site.ID:Citations)
 names(data_isoperu)
-#View(data_isoperu)
+View(data_isoperu)
 ```
 Checando normalidade nos dados por gráficos de densidade:
 
