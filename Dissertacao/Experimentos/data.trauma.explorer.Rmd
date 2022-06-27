@@ -29,9 +29,10 @@ suppressPackageStartupMessages(library(readr))
 #carregando bibliotecas para descrição estatística e visualização
 
 suppressPackageStartupMessages(library(pastecs))
-
+suppressPackageStartupMessages(library(ggplot2))
 #carregando biblioteca para criar a saída do documento
 suppressPackageStartupMessages(library(knitr))
+suppressPackageStartupMessages(library(MASS))
 ```
 
 
@@ -43,9 +44,24 @@ obs: a partir da linha 48 o banco contém dados de frequencia coletados por trab
 dados_traumas <- read.csv("traumas_centrosul_total.csv", na.strings = "NA", sep = ";") 
 names(dados_traumas) #execute este comando para ver os nomes das colunas/variáveis presentes no banco de dados
 
-View(dados_traumas) #execute para visualizar todo o conjunto de dados em uma tabela separada
+#View(dados_traumas) #execute para visualizar todo o conjunto de dados em uma tabela separada
 
-head(dados_traumas) 
+#head(dados_traumas) 
+
+
+```
+
+```{r}
+data_hmpit <-dados_traumas %>% filter(cronologia%in%c("HM","PIT"))
+#View(data_hmpit)
+```
+
+
+
+```{r}
+plot(data_hmpit$n_id_naoafetados,data_hmpit$n_id_afetados, xlab = "N indivíduos observados",
+     ylab= "individuos com traumas")
+
 ```
 
 
@@ -62,7 +78,10 @@ Realizando descrição estatística dos dados númericos de interesse do estudo 
 #n_id_antimortem = número de indivíduos com traumas antimortem, 
 #n_id_perimortem = número de indivíduos com traumas perimortem
 
-data_descr <- dados_traumas %>% select(n_id,n_id_naoafetados,n_id_afetados,n_id_antimortem,n_id_perimortem,n_tr_anterior,n_tr_posterior)
+data_descr <- data_hmpit %>% select(n_id,n_id_naoafetados,
+                                       n_id_afetados,n_id_antimortem,
+                                       n_id_perimortem,n_tr_anterior,
+                                       n_tr_posterior,n_tr_lateral)
 
 descr <- stat.desc(data_descr)
 round(descr,2)
@@ -77,8 +96,13 @@ Por período:
 
 #plotando número de indivíduos por período:
 library(ggplot2)
-dados_traumas %>% filter(!is.na(n_id))%>% #retirando valores "NA" 
-                group_by(cronologia) %>% ggplot+geom_boxplot(aes(x=cronologia,y=n_id))
+
+plot.pr<- ggplot(dados_traumas, aes(x=cronologia,y=n_id,fill(dose)))+geom_boxplot()
+plot.pr+scale_color_brewer(palette="Dark2")
+#dados_traumas %>% filter(!is.na(n_id))%>% #retirando valores "NA" 
+                #group_by(cronologia) %>% ggplot(dados_traumas,aes(x=cronologia,y=n_id,fill(dose))) +geom_boxplot()
+
+
 
 #falta alterar títulos e aparência
 ```
@@ -247,5 +271,205 @@ balloonplot(t(pr.sexo.matriz), main ="período por sexo", xlab ="", ylab="",
 #aplicando teste chiquadrado para independencia das amostras
 chisq <- chisq.test(pr.sexo.matriz)
 chisq
+```
+
+## _APLICANDO MODELOS DE REGRESSÃO_
+
+```{r}
+
+library(MASS)
+#plot(data_hmpit$cronologia.ORD,data_hmpit$n_id_afetados, xlab = "Periodo",
+    # ylab= "individuos com traumas")
+
+M1 <- glm.nb(n_id_afetados ∼ cronologia.ORD+n_id_naoafetados, 
+          link = "log", data = data_hmpit)
+
+summary(M1)
+effects(M1)
+predict.glm(M1)
+hist(predict.glm(M1))
+```
+
+```{r}
+#residuals(M1)
+drop1(M1, tets = "Chi")
+plot(residuals.glm(M1, type="pearson"))
+hist(residuals(M1))
+```
+
+
+Testando a semelhança entre traumas antimortem, perimortem, anterior e posterior por meio do teste Qquadrado com correção de Yates. O teste foi aplicado considerando apenas os dados do banco de dados que foi possível revisar e extrair estes valores. 
+
+```{r}
+#M <- as.table(rbind(c(762, 327, 468), c(484, 239, 477)))
+#dimnames(M) <- list(gender = c("F", "M"),
+#                  party = c("Democrat","Independent", "Republican"))
+#(Xsq <- chisq.test(M))  # Prints test summary
+
+#M x F hm posterior
+hm.post <- as.table(rbind(c(14,80),c(32,149)))
+dimnames(hm.post)<-list(sexo = c("f","m"),
+                        amostra = c("posterior","n total"))
+hm.post
+chisq.test(hm.post)
+
+fr.F <- 14/80
+fr.F
+fr.M <- 32/149
+fr.M
+```
+
+
+```{r}
+#M x F pit antimortem
+
+pit.anti <- as.table(rbind(c(35,207),c(55,222)))
+dimnames(pit.anti)<-list(sexo = c("f","m"),
+                        amostra = c("antimortem","n total"))
+pit.anti
+chisq.test(pit.anti)
+
+fr.F <- 35/207
+fr.F
+fr.M <- 55/222
+fr.M
+```
+
+
+```{r}
+#M x F pit perimortem
+
+pit.peri <- as.table(rbind(c(17,207),c(20,222)))
+dimnames(pit.peri)<-list(sexo = c("f","m"),
+                        amostra = c("perimotem","n total"))
+pit.peri
+chisq.test(pit.peri)
+
+fr.F <- 17/207
+fr.F
+fr.M <- 20/222
+fr.M
+```
+
+
+```{r}
+#M x F pit anterior
+pit.anter <- as.table(rbind(c(49,207),c(61,222)))
+dimnames(pit.anter)<-list(sexo = c("f","m"),
+                        amostra = c("anterior","n total"))
+pit.anter
+chisq.test(pit.anter)
+
+fr.F <- 49/207
+fr.F
+fr.M <- 61/222
+fr.M
+```
+
+
+```{r}
+#M x F pit posterior
+
+pit.post <- as.table(rbind(c(30,207),c(30,222)))
+dimnames(pit.post)<-list(sexo = c("f","m"),
+                        amostra = c("posterior","n total"))
+pit.post
+chisq.test(pit.post)
+
+fr.F <- 30/207
+fr.F
+fr.M <- 30/222
+fr.M
+```
+
+Comparando os sexos masculinos entre os períodos HM e PIT:
+
+```{r}
+#Mhm x Mpit antimortem
+
+Mhm.pit.anti <- as.table(rbind(c(54,149),c(55,222)))
+dimnames(Mhm.pit.anti)<-list(grupo = c("Mhm","Mpit"),
+                        amostra = c("antimortem","n total"))
+Mhm.pit.anti
+chisq.test(Mhm.pit.anti)
+
+fr.Mhm <- 54/149
+fr.Mhm
+fr.Mpit <- 55/222
+fr.Mpit
+```
+
+
+```{r}
+#Mhm x Mpit perimortem
+
+Mhm.pit.peri <- as.table(rbind(c(5,149),c(20,222)))
+dimnames(Mhm.pit.peri)<-list(grupo = c("Mhm","Mpit"),
+                        amostra = c("perimortem","n total"))
+Mhm.pit.peri
+chisq.test(Mhm.pit.peri)
+
+fr.Mhm <- 5/149
+fr.Mhm
+fr.Mpit <- 20/222
+fr.Mpit
+
+#Mhm x Mpit anterior
+
+
+Mhm.pit.anter <- as.table(rbind(c(93,149),c(61,222)))
+dimnames(Mhm.pit.anter)<-list(grupo = c("Mhm","Mpit"),
+                        amostra = c("anterior","n total"))
+Mhm.pit.anter
+chisq.test(Mhm.pit.anter)
+
+fr.Mhm <- 93/149
+fr.Mhm
+fr.Mpit <- 61/222
+fr.Mpit
+
+#Mhm x Mpit posterior
+
+Mhm.pit.post <- as.table(rbind(c(32,149),c(30,222)))
+dimnames(Mhm.pit.post)<-list(grupo = c("Mhm","Mpit"),
+                        amostra = c("posterior","n total"))
+Mhm.pit.post
+chisq.test(Mhm.pit.post)
+
+fr.Mhm <- 32/149
+fr.Mhm
+fr.Mpit <- 30/222
+fr.Mpit
+```
+
+
+```{r}
+#Fhm x Fpit antimortem
+
+Fhm.pit.anti <- as.table(rbind(c(6,80),c(35,207)))
+dimnames(Fhm.pit.anti)<-list(grupo = c("Fhm","Fpit"),
+                        amostra = c("antimortem","n total"))
+Fhm.pit.anti
+chisq.test(Fhm.pit.anti)
+
+fr.Fhm <- 6/80
+fr.Fhm
+fr.Fpit <- 35/207
+fr.Fpit
+
+#Fhm x Fpit posterior
+
+Fhm.pit.post <- as.table(rbind(c(14,80),c(30,207)))
+dimnames(Fhm.pit.post)<-list(grupo = c("Fhm","Fpit"),
+                        amostra = c("posterior","n total"))
+Fhm.pit.post
+chisq.test(Fhm.pit.post)
+
+fr.Fhm <- 14/80
+fr.Fhm
+fr.Fpit <- 30/207
+fr.Fpit
+
+
 ```
 

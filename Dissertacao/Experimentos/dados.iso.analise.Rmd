@@ -49,7 +49,7 @@ Preparação dos dados
 
 ```{r}
 library(readr)
-dat <- read.csv("iso_andesdois.csv", na.strings = c("","NA"))
+dat <- read.csv("data_iso_centrosul.csv",sep=";") %>% select(Site.ID:median.year)
 names(dat)
 #View(dat)
 ```
@@ -59,15 +59,10 @@ dat.both<-dat[which(dat$N.b.coll.!= "NA" & dat$C.b.coll. != "NA"),]
 # selecionando os dados de N e C sem os valores NA
 ```
 
-Separando dados do Centro-Sul dos andes
-```{r}
-#usando mC)todo pipe do pacote tydverse
-dat.peru<-dat.both %>% filter(Region %in% c("South Coast","Central Coast","South Highlands","Central Highlands"))
-```
 
-Manipulando dados do Centro-Sul do Peru, filtrando por cronologia (EIP,MH,LIP)
+Manipulando dados do Centro-Sul do Peru, filtrando por cronologia (MH,LIP)
 ```{r}
-dat.peru.temp <- dat.peru %>% filter(Period%in%c("Early Intermediate Period","Middle Horizon","Late Intermediate Period"))
+dat.peru.central <- dat %>% filter(Period%in%c("Middle Horizon","Late Intermediate Period"))
 #View(dat.peru.temp)
 #write.csv(dat.peru.temp, "dadosisoperu.csv",row.names = FALSE)
 
@@ -76,17 +71,15 @@ dat.peru.temp <- dat.peru %>% filter(Period%in%c("Early Intermediate Period","Mi
 
 Preparando os dados para usar o pacote Siber para plotar elipses
 ```{r}
-dat.siber <- dat.peru.temp [,c("C.b.coll.", "N.b.coll.","elev.factor","Period")]
+dat.siber <- dat.peru.central [,c("C.b.coll.", "N.b.coll.","elev.factor","Period")]
 colnames(dat.siber) <- c("iso1", "iso2", "group","community")
 
-dat.siber.periods <- dat.siber [which(dat.siber$community == "Early Intermediate Period" | dat.siber$community == "Middle Horizon" | dat.siber$community == "Late Intermediate Period"),]
+dat.siber.periods <- dat.siber [which(dat.siber$community == "Middle Horizon" | dat.siber$community == "Late Intermediate Period"),]
 
 
 
 # criando subdatasets para gerar as elipses
 
-
-siber.eip <- dat.siber.periods %>% filter (community == "Early Intermediate Period")
 
 siber.mh <- dat.siber.periods %>% filter(community == "Middle Horizon")
 
@@ -96,9 +89,9 @@ siber.lip <- dat.siber.periods %>% filter(community == "Late Intermediate Period
 ```
 
 ```{r}
-siber.eip <- createSiberObject(siber.eip)
+#siber.eip <- createSiberObject(siber.eip)
 #reorder the levels so they go Coastal, Mid-elevation, Highland
-siber.eip$original.data$group <- factor(siber.eip$original.data$group, levels = c("Coastal", "Mid-elevation", "Highland"))
+#siber.eip$original.data$group <- factor(siber.eip$original.data$group, levels = c("Coastal", "Mid-elevation", "Highland"))
 
 siber.mh <- createSiberObject(siber.mh)
 
@@ -164,7 +157,7 @@ text(-25, 0.5, labels = "Early Intermediate Period", pos = 4, cex = 0.75)
 mtext(text = expression({delta}^15*N~'\u2030'), side = 2, line = 3, at = -3, cex = 0.75)
 legend("topleft", bty="n", col=c("#440154FF", "#21908CFF", "#FDE725FF"), pch = 19, legend=c("Coastal", "Mid-elevation", "Highland"), cex = 0.75)
 
-#par(mar=c(0.5,1.5,1.5,1.5))
+#par(mar=c(0.5,1.5,1.5,1.5))'''
 
 plot(siber.mh$original.data$iso1, siber.mh$original.data$iso2, ylim = c(0,35), xlim =
 c(-25,-5), pch = 19, col = c(coast.alpha, midel.alpha, highl.alpha)[siber.mh$original.data$group], xlab = "", ylab = "", xaxt = "na")
@@ -236,18 +229,11 @@ text(-25, 0.5, labels = "Late Intermediate Period", pos = 4, cex = 0.75)
 (obs: ainda preciso entender porque não está aparecendo o gráfico do período "Late Intermediate Period", e porque também não está aparecendo o rótulo da concentração de carbono no eixo X)
 
 
-Dando seguimento a análise. Agora utilizando um dataset que contémm somente dados da região centro-sul do Peru que foi previamente preparado 
 
-```{r}
-data_isoperu <- read.csv("data_isoperu.csv",na.strings = "NA", sep = ";")
-data_isoperu <- data_isoperu %>% select(Site.ID:Citations)
-names(data_isoperu)
-#View(data_isoperu)
-```
 Separando dados de N e C para plotar distribuições em histograma
 ```{r}
-data_N <- data_isoperu %>% mutate(C.b.coll.= NULL)
-data_C <- data_isoperu %>% mutate(N.b.coll.= NULL)
+data_N <- dat.peru.central %>% mutate(C.b.coll.= NULL)
+data_C <- dat.peru.central %>% mutate(N.b.coll.= NULL)
 #head(data_N)
 #head(data_C)
 ```
@@ -269,14 +255,14 @@ N_high <- data_N %>% filter(elev.factor == "Highland")
 #plotando os histogramas
 
 par(mfrow = c(2,2))
-hist(data_N$med.date, xlab = "yBP", ylab = "N.Individuos", main = "", xlim = c(0,2000))
-mtext ("todos os individuos (n=833)", cex = 0.75)
-hist(N_coast$med.date, col = "#440154FF", xlab = "yBP", ylab = "N.Individuos", main = "", xlim = c(0,2000), ylim = c(0,300))
+hist(data_N$med.date, xlab = "yBP", ylab = "N.Individuos", main = "", xlim = c(450,1500))
+mtext ("todos os individuos (n=664)", cex = 0.75)
+hist(N_coast$med.date, col = "#440154FF", xlab = "yBP", ylab = "N.Individuos", main = "", xlim = c(450,1500), ylim = c(0,300))
 mtext("Individuos da costa (n = 228", cex = 0.75)
-hist(N_midel$med.date, col = "#21908CFF", xlab = "yBP", ylab = "N.Individuos", main = "", xlim = c(0,2000), ylim = c(0,300))
+hist(N_midel$med.date, col = "#21908CFF", xlab = "yBP", ylab = "N.Individuos", main = "", xlim = c(450,1500), ylim = c(0,300))
 mtext("Individuos de mC)dia elevaC'C#o (n = 531)", cex = 0.75)
 hist(N_high$med.date, col = "#FDE725FF", xlab = "yBP", ylab = "N.Individuos", main =
-"", xlim = c(0,2000), ylim = c(0,300))
+"", xlim = c(450,800), ylim = c(0,300))
 mtext("Individuos das terras altas (n = 74)", cex = 0.75)
 
 
@@ -299,14 +285,14 @@ C_high <- data_N %>% filter(elev.factor == "Highland")
 #plotando os histogramas
 
 par(mfrow = c(2,2))
-hist(data_C$med.date, xlab = "yBP", ylab = "N.Individuos", main = "", xlim = c(0,2000))# limitando o eixo X atpe 2000 anos
+hist(data_C$med.date, xlab = "yBP", ylab = "N.Individuos", main = "", xlim = c(450,1500))# limitando o eixo X atpe 2000 anos
 mtext ("todos os individuos (n=833)", cex = 0.75)
-hist(C_coast$med.date, col = "#440154FF", xlab = "yBP", ylab = "N.Individuos", main = "", xlim = c(0,2000), ylim = c(0,300))
+hist(C_coast$med.date, col = "#440154FF", xlab = "yBP", ylab = "N.Individuos", main = "", xlim = c(450,1500), ylim = c(0,300))
 mtext("Individuos da costa (n = 228", cex = 0.75)
-hist(C_midel$med.date, col = "#21908CFF", xlab = "yBP", ylab = "N.Individuos", main = "", xlim = c(0,2000), ylim = c(0,300))
+hist(C_midel$med.date, col = "#21908CFF", xlab = "yBP", ylab = "N.Individuos", main = "", xlim = c(450,1500), ylim = c(0,300))
 mtext("Individuos de mC)dia elevaC'C#o (n = 531)", cex = 0.75)
 hist(C_high$med.date, col = "#FDE725FF", xlab = "yBP", ylab = "N.Individuos", main =
-"", xlim = c(0,2000), ylim = c(0,300))
+"", xlim = c(450,800), ylim = c(0,300))
 mtext("Individuos das terras altas (n = 74)", cex = 0.75)
 
 ```
@@ -375,8 +361,6 @@ dat_Allvars_Pred <- with (data_C,
                           data.frame(
                             Temp_Mean,
                             Precip_Mean,
-                            Temp_Mean_Seasonality,
-                            Precip_Mean_Seasonality,
                             Demography.kde.14c))
 
 cm <- cor(dat_Allvars_Pred ,method="pearson",use="pairwise.complete.obs")
@@ -412,6 +396,7 @@ set.seed(33)#set a seed for replicability
 #examine how bone N values vary as a function of all other variables in the data
 RF.N <- ranger(N.b.coll. ~ ., dat.N)#Use RF regression to predict nitrogen values usingeach of the predictor variables
 print(RF.N)
+
 ```
 
 
@@ -424,15 +409,22 @@ print(RF.N)
 Analisando dados por sexo:
 ```{r}
 #Selecionando dados por sexo, escolhendo apenas masculino e feminino
-data_isosex <- data_isoperu %>% filter(Sex%in%c("M","F"))
+data_isosex <- dat.peru.central %>% filter(Sex%in%c("M","F"))
 View(data_isosex)
-data_isoM <- data_isoperu %>% filter(Sex%in%c("M"))
-data_isoF <- data_isoperu %>% filter(Sex%in%c("F")) 
+write.csv2(data_isosex,"dataisosex.csv")
+data_isoM <- data_isosex %>% filter(Sex%in%c("M"))
+data_isoF <- data_isosex %>% filter(Sex%in%c("F")) 
 
 
 ```
 
-Buscando adicionar o rank de intensidade de violC*ncia por região
+```{r}
+data.isoMC <- data_isoM %>% select(C.b.coll.)
+data.isoMN <- data_isoM %>% select(N.b.coll.)
+data.isoFC <- data_isoF %>% select(C.b.coll.)
+data.isoFN <- data_isoF %>% select(N.b.coll.)
+```
+
 ```{r}
 
 ```
