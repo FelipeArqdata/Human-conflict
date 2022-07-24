@@ -9,13 +9,13 @@ output:
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE) #função para criar o tipo de saída do documento
+knitr::opts_chunk$set(echo = TRUE) #funC'C#o para criar o tipo de saC-da do documento
 ```
 
-Carregando bibliotecas para manipulação de dados 
+Carregando bibliotecas para manipulaC'C#o de dados 
 
 ```{r echo = FALSE}
-# É	necessário instalar as biliotecas antes de carregá-las. Execute o seguinte padrão de comando para instalar as bibliotecas: install.packages ("nome da bilioteca")
+# C		necessC!rio instalar as biliotecas antes de carregC!-las. Execute o seguinte padrC#o de comando para instalar as bibliotecas: install.packages ("nome da bilioteca")
 
 #carregando bibliotecas de manipular dados com o supressor de alertas
 suppressPackageStartupMessages(library(plyr)) 
@@ -26,23 +26,23 @@ suppressPackageStartupMessages(library(stringi))
 suppressPackageStartupMessages(library(tidyverse))
 suppressPackageStartupMessages(library(readr))
 
-#carregando bibliotecas para descrição estatística e visualização
+#carregando bibliotecas para descriC'C#o estatC-stica e visualizaC'C#o
 
 suppressPackageStartupMessages(library(pastecs))
 suppressPackageStartupMessages(library(ggplot2))
-#carregando biblioteca para criar a saída do documento
+#carregando biblioteca para criar a saC-da do documento
 suppressPackageStartupMessages(library(knitr))
 suppressPackageStartupMessages(library(MASS))
 ```
 
 
-Carregando dados do arquivo  "traumas_centrosul_total.csv" correspondente a dados do centro-sul do Peru entre os períodos PIP,HM e PIT:
-obs: a partir da linha 48 o banco contém dados de frequencia coletados por trabalhos que não foi possível obter acesso direto.
+Carregando dados do arquivo  "traumas_centrosul_total.csv" correspondente a dados do centro-sul do Peru entre os perC-odos PIP,HM e PIT:
+obs: a partir da linha 48 o banco contC)m dados de frequencia coletados por trabalhos que nC#o foi possC-vel obter acesso direto.
 
 ```{r}
 
 dados_traumas <- read.csv("traumas_centrosul_total.csv", na.strings = "NA", sep = ";") 
-names(dados_traumas) #execute este comando para ver os nomes das colunas/variáveis presentes no banco de dados
+names(dados_traumas) #execute este comando para ver os nomes das colunas/variC!veis presentes no banco de dados
 
 #View(dados_traumas) #execute para visualizar todo o conjunto de dados em uma tabela separada
 
@@ -56,45 +56,50 @@ data_hmpit <-dados_traumas %>% filter(cronologia%in%c("HM","PIT"))
 #View(data_hmpit)
 ```
 
+```{r}
+install.packages("dplyr")
+suppressPackageStartupMessages(library(dplyr))
+data.analise <- data_hmpit %>% select(grupo.regional,cronologia,sitio,sexo,n_id,n_id_afetados)
+```
 
 
 ```{r}
-plot(data_hmpit$n_id_naoafetados,data_hmpit$n_id_afetados, xlab = "N indivíduos observados",
+plot(data_hmpit$n_id_naoafetados,data_hmpit$n_id_afetados, xlab = "N indivC-duos observados",
      ylab= "individuos com traumas")
 
 ```
 
 
 
-## _Descrição estatística dos dados:_
+## _DescriC'C#o estatC-stica dos dados:_
 
-Realizando descrição estatística dos dados númericos de interesse do estudo pela biblioteca "pastecs" 
+Realizando descriC'C#o estatC-stica dos dados nC:mericos de interesse do estudo pela biblioteca "pastecs" 
 
 ```{r}
-# A função summary também pode ser utilizada
-# n_id = número de individuos, 
-#n_id_traumas = número de indivíduos com traumas, 
-#sem_traumas = número de indivíduos sem traumas, 
-#n_id_antimortem = número de indivíduos com traumas antimortem, 
-#n_id_perimortem = número de indivíduos com traumas perimortem
+# A funC'C#o summary tambC)m pode ser utilizada
+# n_id = nC:mero de individuos, 
+#n_id_traumas = nC:mero de indivC-duos com traumas, 
+#sem_traumas = nC:mero de indivC-duos sem traumas, 
+#n_id_antimortem = nC:mero de indivC-duos com traumas antimortem, 
+#n_id_perimortem = nC:mero de indivC-duos com traumas perimortem
 
-data_descr <- data_hmpit %>% select(n_id,n_id_naoafetados,
-                                       n_id_afetados,n_id_antimortem,
-                                       n_id_perimortem,n_tr_anterior,
-                                       n_tr_posterior,n_tr_lateral)
+#data_descr <- data_hmpit %>% select(n_id,n_id_naoafetados,
+                                      # n_id_afetados,n_id_antimortem,
+                                       #n_id_perimortem,n_tr_anterior,
+                                       #n_tr_posterior,n_tr_lateral)
 
-descr <- stat.desc(data_descr)
-round(descr,2)
+#descr <- stat.desc(data_descr)
+#round(descr,2)
 
 ```
 
 
 
-Visualizando distribuição plotando boxplots
-Por período:
+Visualizando distribuiC'C#o plotando boxplots
+Por perC-odo:
 ```{r}
 
-#plotando número de indivíduos por período:
+#plotando nC:mero de indivC-duos por perC-odo:
 library(ggplot2)
 
 plot.pr<- ggplot(dados_traumas, aes(x=cronologia,y=n_id,fill(dose)))+geom_boxplot()
@@ -104,32 +109,32 @@ plot.pr+scale_color_brewer(palette="Dark2")
 
 
 
-#falta alterar títulos e aparência
+#falta alterar tC-tulos e aparC*ncia
 ```
 
 
 
 ```{r}
-#plotanto número de indivíduos com traumas:
+#plotanto nC:mero de indivC-duos com traumas:
 dados_traumas %>% filter(!is.na(n_id_afetados))%>%
                 group_by(cronologia) %>% ggplot+geom_boxplot(aes(x=cronologia,y=n_id_afetados))
 ```
 
 ```{r}
-#plotando número de indivíduos com traumas anitmortem
+#plotando nC:mero de indivC-duos com traumas anitmortem
 
 dados_traumas %>% filter(!is.na(n_id_antimortem))%>%
                 group_by(cronologia) %>% ggplot+geom_boxplot(aes(x=cronologia,y=n_id_antimortem))
 ```
 
 ```{r}
-#plotando número de indivíduos com traumas perimortem
+#plotando nC:mero de indivC-duos com traumas perimortem
 
 dados_traumas %>% filter(!is.na(n_id_perimortem))%>%
                 group_by(cronologia) %>% ggplot+geom_boxplot(aes(x=cronologia,y=n_id_perimortem))
 ```
 
-Plotando gráfico de barras com a contagem de amostras por período
+Plotando grC!fico de barras com a contagem de amostras por perC-odo
 ```{r}
 dados_traumas %>% count(cronologia) %>% top_n(10,n) %>% ggplot()+geom_col(aes(x=cronologia,y=n)) 
 ```
@@ -138,30 +143,30 @@ Por sexo:
 ```{r}
 # F = feminino
 # M = masculino
-# NID = não identificado
-#número de indivíduos
+# NID = nC#o identificado
+#nC:mero de indivC-duos
 
 
 dados_traumas %>% filter(!is.na(n_id))%>%
                 group_by(sexo) %>%  ggplot+geom_boxplot(aes(x=sexo,y=n_id))
-##Lembrar de diminuir a escala do gráfico
+##Lembrar de diminuir a escala do grC!fico
 ```
 
 
 ```{r}
-#número de indivíduos com traumas
+#nC:mero de indivC-duos com traumas
 dados_traumas %>% filter(!is.na(n_id_afetados))%>%
                 group_by(sexo) %>%  ggplot+geom_boxplot(aes(x=sexo,y=n_id_afetados))
 ```
 
 ```{r}
-#número de indivíduos com traumas antimortem
+#nC:mero de indivC-duos com traumas antimortem
 dados_traumas %>% filter(!is.na(n_id_antimortem))%>%
                 group_by(sexo) %>%  ggplot+geom_boxplot(aes(x=sexo,y=n_id_antimortem))
 ```
 
 ```{r}
-#número de indivíduos com traumas perimortem
+#nC:mero de indivC-duos com traumas perimortem
 dados_traumas %>% filter(!is.na(n_id_perimortem))%>%
                 group_by(sexo) %>%  ggplot+geom_boxplot(aes(x=sexo,y=n_id_perimortem))
 ```
@@ -170,110 +175,37 @@ dados_traumas %>% count(sexo) %>% top_n(20,n) %>% ggplot()+geom_col(aes(x=sexo,y
 ```
 
 
-Por região:
+Por regiC#o:
 
 ```{r}
-# númeoro de indivíduos
+# nC:meoro de indivC-duos
 dados_traumas %>% filter(!is.na(n_id))%>% ggplot+geom_boxplot(aes(x=regiao,y=n_id))
 ```
 
 ```{r}
-#número de indivíduos com traumas
+#nC:mero de indivC-duos com traumas
 dados_traumas %>% filter(!is.na(n_id_afetados))%>% ggplot+geom_boxplot(aes(x=regiao,y=n_id_afetados))
-# os resultados mostram que o vale de majes concentra mais casos de traumas, no entanto, só pussui 4 amostra sendo desproporcional em relação ao restante
+# os resultados mostram que o vale de majes concentra mais casos de traumas, no entanto, sC3 pussui 4 amostra sendo desproporcional em relaC'C#o ao restante
 ```
 
 ```{r}
-#número de indivíduos com traumas antimortem
+#nC:mero de indivC-duos com traumas antimortem
 dados_traumas %>% filter(!is.na(n_id_antimortem))%>% ggplot+geom_boxplot(aes(x=regiao,y=n_id_antimortem))
 ```
 
 ```{r}
-#número de indivíduos com traumas perimortem
+#nC:mero de indivC-duos com traumas perimortem
 dados_traumas %>% filter(!is.na(n_id_perimortem))%>% ggplot+geom_boxplot(aes(x=regiao,y=n_id_perimortem))
 ```
 
-Testando a associação entre as variáveis pelo teste Chiquadrado. Os dados foram previamente preparados em forma de tabelas de contigência para permitir a aplicação do teste:
-
-obs1:as tabelas não contabiliza os dados de frequencia dos trabalhos que não foi possivel o acesso (precisa atualizar)
-obs2: as tabelas referentes a somente a região e o período ainda não foram analisadas 
-
-```{r}
-#carregando dados em tabela de contigencia para aplicar o chiquadrado
-
-#por região
-regiao <- read.csv("regiao_contigent.csv", sep = ";",row.names = 1) %>% slice(-3)  #usando a função slice para retirar as linhas 3 correspondentes a região do vale de Lurín que contém dados faltantes 
-View(regiao)
-#por região e sexo:
-```
-
-
-```{r}
-#por período
-periodo <- read.csv("periodo_contigent.csv", sep = ";")
-View(periodo)
-
-#por periodo e sexo:
-
-```
-
-
-```{r}
-#analisando dados de região por sexo:
-
-regiao_sexo <- read.csv("regiao_sexo_contigent.csv", sep = ";", row.names = 1) %>% slice(-6,-7,-8) # aplicando a função slice para retirar as linhas 7 e 8 correspondentes a região do vale de Lurin que nC#o possui dados pareados por sexo
-#View(regiao_sexo)
-
-
-library("gplots") #usando o pacote de visualizaC'C#o dos dados matricial
-
-#selecionando apenas as  colunas de número de amostras, traumas e sem traumas (há ausência de dados nas variáveis antimortem e perimortem) e  convertendo dados em matriz:
-
-regiao_sexo_at <- regiao_sexo %>% select(n_id_traumas,sem_traumas)
-
-rg.sexo.matriz <- as.table(as.matrix(regiao_sexo_at)) #transformando os dados em tipo matriz
-
-#plotando gráfico balloonplot 
-
-balloonplot(t(rg.sexo.matriz), main ="região por sexo", xlab ="", ylab="",label = FALSE, show.margins = FALSE)
-
-```
-```{r}
-#aplicando teste chiquadrado para independencia das amostras
-chisq <- chisq.test(rg.sexo.matriz)
-chisq
-```
-_O resultado aponta que existe dependência entre as amostras, resta saber em quais pares de amostras especificamente_
 
 
 
-```{r}
-periodo_sexo <-read.csv("periodo_sexo_contigent.csv", sep = ";", row.names = 1)#row.names = 1) %>% select(n_id,n_id_traumas,sem_traumas) %>% slice(-6)
-names(periodo_sexo)
-#View(periodo_sexo)
-head(periodo_sexo)
-```
 
 
-```{r}
-periodo_sexo_at <- periodo_sexo %>% select(n_id_traumas,sem_traumas) #selecionando apenas as colunas que com valores númericos pareados
 
-pr.sexo.matriz <- as.table(as.matrix(periodo_sexo_at))
 
-#plotando gráfico balloonplot 
-
-balloonplot(t(pr.sexo.matriz), main ="período por sexo", xlab ="", ylab="",
-            label = FALSE, show.margins = FALSE)
-
-```
-
-```{r}
-#aplicando teste chiquadrado para independencia das amostras
-chisq <- chisq.test(pr.sexo.matriz)
-chisq
-```
-
-## _APLICANDO MODELOS DE REGRESSÃO_
+## _APLICANDO MODELOS DE REGRESSCO_
 
 ```{r}
 
@@ -281,7 +213,7 @@ library(MASS)
 #plot(data_hmpit$cronologia.ORD,data_hmpit$n_id_afetados, xlab = "Periodo",
     # ylab= "individuos com traumas")
 
-M1 <- glm.nb(n_id_afetados ∼ cronologia.ORD+n_id_naoafetados, 
+M1 <- glm.nb(n_id_afetados b< cronologia.ORD+n_id_naoafetados, 
           link = "log", data = data_hmpit)
 
 summary(M1)
@@ -298,7 +230,7 @@ hist(residuals(M1))
 ```
 
 
-Testando a semelhança entre traumas antimortem, perimortem, anterior e posterior por meio do teste Qquadrado com correção de Yates. O teste foi aplicado considerando apenas os dados do banco de dados que foi possível revisar e extrair estes valores. 
+Testando a semelhanC'a entre traumas antimortem, perimortem, anterior e posterior por meio do teste Qquadrado com correC'C#o de Yates. O teste foi aplicado considerando apenas os dados do banco de dados que foi possC-vel revisar e extrair estes valores. 
 
 ```{r}
 #M x F hm antimortem
@@ -415,7 +347,7 @@ fr.F <-  30/207
 fr.F
 ```
 
-Comparando os sexos masculinos entre os períodos HM e PIT:
+Comparando os sexos masculinos entre os perC-odos HM e PIT:
 
 ```{r}
 #Mhm x Mpit antimortem
@@ -433,7 +365,7 @@ fr.Mpit <- 55/222
 fr.Mpit
 ```
 
-Comparando traumas nos indivíduos masculinos entre os períodos
+Comparando traumas nos indivC-duos masculinos entre os perC-odos
 
 ```{r}
 #Mhm x Mpit perimortem
@@ -547,5 +479,18 @@ hm.pit
 #chisq.test(hm.pit)
 fisher.test(hm.pit)
 
+```
+
+
+```{r}
+set.seed(1234)
+norm <- rnorm(100000,mean=0,sd=1)
+x <-as.data.frame(norm)
+
+plotnorm<-ggplot(x, aes(x=norm)) + 
+            geom_histogram(aes(y=..density..), colour="white", fill="white")+
+            geom_density(alpha=.6, fill="darkred")
+#ggsave(filename = "curva.jpg",plot = plotnorm,width = 4.5,height = 3)
+qqplot(norm)
 ```
 

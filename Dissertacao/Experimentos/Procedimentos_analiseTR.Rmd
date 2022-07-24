@@ -1,0 +1,358 @@
+---
+title: "Análise do banco de dados de traumas"
+author: "Felipe Pinto"
+date: '2022-07-16'
+output: word_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r echo = FALSE}
+# É necessário instalar as biliotecas antes de processar as análises. Execute o seguinte padrão de comando para instalar as bibliotecas: install.packages ("nome da bilioteca")
+
+#carregando bibliotecas para manipular dados com o supressor de alertas
+suppressPackageStartupMessages(library(plyr)) 
+suppressPackageStartupMessages(library(dplyr))
+suppressPackageStartupMessages(library(tidyr))
+suppressPackageStartupMessages(library(stringr))
+suppressPackageStartupMessages(library(stringi))
+suppressPackageStartupMessages(library(tidyverse))
+suppressPackageStartupMessages(library(readr))
+suppressPackageStartupMessages(library(tibble))
+
+
+#carregando bibliotecas para descrição estatísticas, visualização e aplicação de modelos
+
+suppressPackageStartupMessages(library(pastecs))
+suppressPackageStartupMessages(library(ggplot2))
+
+suppressPackageStartupMessages(library(knitr))
+#suppressPackageStartupMessages(library(MASS))
+```
+
+
+
+#### _Carregando dados do arquivo  "traumas_centrosul_total.csv" correspondente a dados do centro-sul do Peru entre os períodos PIP (Período Intermédio Primeiro) HM (Horizonte Médio) e PIT(Período Intermédio Tardio):_ 
+#### _Dados podem ser baixados em : https://github.com/FelipeArqdata/Human-conflict/tree/main/Dissertacao/Experimentos_
+
+##### _obs1: a partir da linha 48 o banco contémm dados de frequência coletados por trabalhos que não foi possível obter acesso direto._
+##### _obs2:apenas os dados do HM e PIT foram analisados_
+
+```{r}
+
+dados_traumas <- read.csv("traumas_centrosul_total.csv", na.strings = "NA", sep = ";") 
+names(dados_traumas) #execute este comando para ver os nomes das colunas e variáveis presentes no banco de dados
+
+#View(dados_traumas) #execute para visualizar todo o conjunto de dados em uma janela separada
+
+#head(dados_traumas) #execute para visualizar apenas as primeiras 5 observações dos dados
+```
+
+```{r}
+library(dplyr)
+data_hmpit <-dados_traumas %>% filter(cronologia%in%c("HM","PIT"))
+as.data.frame(data_hmpit)
+d.analise <- select(data_hmpit,grupo.regional,cronologia,cronologia.ORD,sexo,n_id,n_id_afetados,n_id_naoafetados,n_fr_afetados,n_id_antimortem,n_id_perimortem,n_tr_anterior,n_tr_posterior)
+#names(d.analise)
+#View(d.analise)
+
+
+```
+
+Carregando pacotes para construção de gráficos descritivos
+```{r}
+library(ggplot2)
+#install.packages("patchwork")
+library(patchwork)
+library(RColorBrewer)
+```
+
+
+```{r}
+
+p.nid <- ggplot(d.analise, aes(x=n_id,fill = grupo.regional)) + 
+  geom_histogram(aes(y=..density..))+facet_grid(grupo.regional ~ .)+ theme_classic()
+  p.nid+ geom_density()+facet_grid(grupo.regional ~ .)+ theme_classic()
+  p.nid+scale_color_brewer(palette="Greys")
+
+```
+
+
+```{r}
+p.nid+scale_fill_brewer(palette="Dark2")  
+```
+
+
+```{r}
+p.nid+ geom_vline(aes(xintercept=median(n_id)),
+            color="black", linetype="dashed", size=1)+ theme_classic()
+p.nid+ geom_density()+facet_grid(grupo.regional ~ .)+ theme_classic()
+```
+
+
+
+
+## _Testando a semelhança entre traumas antimortem, perimortem, anterior e posterior por meio do teste Exato de Fisher. O teste foi aplicado considerando apenas os dados do banco de dados que foi possível revisar e extrair os dados quantitativos dessas variáveis_ 
+
+```{r}
+# Comparando traumas antimortem entre os sexos masculino e feminino durante o HM
+#M x F hm antimortem
+hm.anti <- as.table(rbind(c(6,80),c(54,149)))
+dimnames(hm.anti)<-list(sexo = c("f","m"),
+                        amostra = c("antimortem","n total"))
+hm.anti
+#chisq.test(hm.anti)
+fisher.test(hm.anti)
+
+fr.F <- 6/80
+fr.F
+fr.M <- 54/149
+fr.M
+```
+```{r}
+# Comparando traumas da região anterior entre os sexos masculino e feminino durante o HM
+#M x F hm anterior
+hm.anter <- as.table(rbind(c(2,80),c(93,149)))
+dimnames(hm.anter)<-list(sexo = c("f","m"),
+                        amostra = c("anterior","n total"))
+hm.anter
+#chisq.test(hm.anter)
+fisher.test(hm.anter)
+
+fr.F <- 2/80
+fr.F
+fr.M <- 93/149
+fr.M
+```
+
+
+```{r}
+# Comparando traumas perimortem entre os sexos masculino e feminino durante o HM
+
+#M x F hm posterior
+hm.post <- as.table(rbind(c(32,149),c(14,80)))
+dimnames(hm.post)<-list(sexo = c("m","f"),
+                        amostra = c("posterior","n total"))
+hm.post
+#chisq.test(hm.post)
+fisher.test(hm.post)
+
+fr.M <- 32/149
+fr.M
+fr.F<- 14/80 
+fr.F
+```
+
+
+```{r}
+# Comparando traumas antimortem entre os sexos masculino e feminino durante o PIT
+#M x F pit antimortem
+
+pit.anti <- as.table(rbind(c(55,222),c(35,207)))
+dimnames(pit.anti)<-list(sexo = c("m","f"),
+                        amostra = c("antimortem","n total"))
+pit.anti
+#chisq.test(pit.anti)
+fisher.test(pit.anti)
+
+fr.M <- 55/222
+fr.M
+fr.F <- 35/207
+fr.F
+```
+
+
+```{r}
+# Comparando traumas perimortem entre os sexos masculino e feminino durante o PIT
+#M x F pit perimortem
+
+pit.peri <- as.table(rbind(c(20,222),c(17,207)))
+dimnames(pit.peri)<-list(sexo = c("m","f"),
+                        amostra = c("perimotem","n total"))
+pit.peri
+#chisq.test(pit.peri)
+fisher.test(pit.peri)
+fr.M <- 20/222 
+fr.M
+fr.F <- 17/207
+fr.F
+```
+
+
+```{r}
+# Comparando traumas na região anterior do crânio entre os sexos masculino e feminino durante o PIT
+#M x F pit anterior
+pit.anter <- as.table(rbind(c(61,222),c(49,207)))
+dimnames(pit.anter)<-list(sexo = c("m","f"),
+                        amostra = c("anterior","n total"))
+pit.anter
+#chisq.test(pit.anter)
+fisher.test(pit.anter)
+
+fr.M <- 61/222 
+fr.M
+fr.F <- 49/207
+fr.F
+```
+
+
+```{r}
+# Comparando traumas na região posterior do crânio entre os sexos masculino e feminino durante o PIT
+#M x F pit posterior
+
+pit.post <- as.table(rbind(c(30,222),c(30,207)))
+dimnames(pit.post)<-list(sexo = c("m","f"),
+                        amostra = c("posterior","n total"))
+pit.post
+#chisq.test(pit.post)
+fisher.test(pit.post)
+fr.M <- 30/222
+fr.M
+fr.F <-  30/207
+fr.F
+```
+
+Comparando os sexos masculinos entre os perC-odos HM e PIT:
+
+```{r}
+# Comparando traumas antimortem no sexo masculino entre os períodos HM e PIT
+#Mhm x Mpit antimortem
+
+Mhm.pit.anti <- as.table(rbind(c(54,149),c(55,222)))
+dimnames(Mhm.pit.anti)<-list(grupo = c("Mhm","Mpit"),
+                        amostra = c("antimortem","n total"))
+Mhm.pit.anti
+#chisq.test(Mhm.pit.anti)
+fisher.test(Mhm.pit.anti)
+
+fr.Mhm <- 54/149
+fr.Mhm
+fr.Mpit <- 55/222
+fr.Mpit
+```
+
+Comparando traumas nos indivC-duos masculinos entre os perC-odos
+
+```{r}
+# Comparando traumas perimortem no sexo masculino entre os períodos HM e PIT
+#Mhm x Mpit perimortem
+
+Mhm.pit.peri <- as.table(rbind(c(5,149),c(20,222)))
+dimnames(Mhm.pit.peri)<-list(grupo = c("Mhm","Mpit"),
+                        amostra = c("perimortem","n total"))
+Mhm.pit.peri
+#chisq.test(Mhm.pit.peri)
+fisher.test(Mhm.pit.peri)
+
+fr.Mhm <- 5/149
+fr.Mhm
+fr.Mpit <- 20/222
+fr.Mpit
+
+```
+
+
+```{r}
+# Comparando traumas na região anterior do crânio no sexo masculino entre os períodos HM e PIT
+#Mhm x Mpit anterior
+
+
+Mhm.pit.anter <- as.table(rbind(c(93,149),c(61,222)))
+dimnames(Mhm.pit.anter)<-list(grupo = c("Mhm","Mpit"),
+                        amostra = c("anterior","n total"))
+Mhm.pit.anter
+#chisq.test(Mhm.pit.anter)
+fisher.test(Mhm.pit.anter)
+
+fr.Mhm <- 93/149
+fr.Mhm
+fr.Mpit <- 61/222
+fr.Mpit
+```
+
+
+```{r}
+# Comparando traumas na região posterior do crânio no sexo masculino entre os períodos HM e PIT
+#Mhm x Mpit posterior
+
+Mhm.pit.post <- as.table(rbind(c(32,149),c(30,222)))
+dimnames(Mhm.pit.post)<-list(grupo = c("Mhm","Mpit"),
+                        amostra = c("posterior","n total"))
+Mhm.pit.post
+#chisq.test(Mhm.pit.post)
+fisher.test(Mhm.pit.post)
+
+fr.Mhm <- 32/149
+fr.Mhm
+fr.Mpit <- 30/222
+fr.Mpit
+```
+
+
+```{r}
+# Comparando traumas antimortem no sexo feminino entre os períodos HM e PIT
+#Fhm x Fpit antimortem
+
+Fhm.pit.anti <- as.table(rbind(c(6,80),c(35,207)))
+dimnames(Fhm.pit.anti)<-list(grupo = c("Fhm","Fpit"),
+                        amostra = c("antimortem","n total"))
+Fhm.pit.anti
+#chisq.test(Fhm.pit.anti)
+fisher.test(Fhm.pit.anti)
+
+fr.Fhm <- 6/80
+fr.Fhm
+fr.Fpit <- 35/207
+fr.Fpit
+```
+
+
+```{r}
+# Comparando traumas na região posterior no sexo feminino entre os períodos HM e PIT
+#Fhm x Fpit posterior
+
+Fhm.pit.post <- as.table(rbind(c(14,80),c(30,207)))
+dimnames(Fhm.pit.post)<-list(grupo = c("Fhm","Fpit"),
+                        amostra = c("posterior","n total"))
+Fhm.pit.post
+#chisq.test(Fhm.pit.post)
+fisher.test(Fhm.pit.post)
+
+fr.Fhm <- 14/80
+fr.Fhm
+fr.Fpit <- 30/207
+fr.Fpit
+
+
+```
+
+```{r}
+# Comparando traumas na região anterior no sexo feminino  entre os períodos HM e PIT
+#Fhm x Fpit anterior
+
+Fhm.pit.anter <- as.table(rbind(c(2,80),c(49,207)))
+dimnames(Fhm.pit.anter)<-list(grupo = c("Fhm","Fpit"),
+                        amostra = c("posterior","n total"))
+Fhm.pit.anter
+#chisq.test(Fhm.pit.anter)
+fisher.test(Fhm.pit.anter)
+
+fr.Fhm <- 2/80
+fr.Fhm
+fr.Fpit <- 49/207
+fr.Fpit
+```
+
+```{r}
+# Comparando traumas totais entre os períodos HM e PIT
+hm.pit <- as.table(rbind(c(136,326),c(251,479)))
+dimnames(hm.pit)<-list(grupo = c("hm","pit"),
+                        amostra = c("afetados","n total"))
+hm.pit
+
+fisher.test(hm.pit)
+
+```
+
