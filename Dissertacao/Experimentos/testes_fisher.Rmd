@@ -1,0 +1,304 @@
+---
+title: "Procedimentos de aplicação de testes Exato de Fisher"
+author: "Felipe"
+date: '2022-07-28'
+output: word_document
+---
+
+
+
+## Testando a semelhança entre traumas antimortem, perimortem, anterior e posterior por meio de testes Exato de Fisher. O teste foi aplicado considerando apenas os dados do banco de dados que foi possível revisar e extrair os dados quantitativos dessas variáveis
+
+Obs: Os valores podem ser consultados, verificando a base de dados de traumas.
+
+
+```{r}
+# Comparando traumas antimortem entre os sexos masculino e feminino durante o HM
+#M x F hm antimortem
+hm.anti <- as.table(rbind(c(6,80),c(54,149)))
+dimnames(hm.anti)<-list(sexo = c("f","m"),
+                        amostra = c("antimortem","n total"))
+hm.anti
+
+fisher.test(hm.anti)
+
+#calculando frequências relativas
+
+fr.F <- 6/80
+fr.F
+fr.M <- 54/149
+fr.M
+```
+
+
+```{r}
+# Comparando traumas da região anterior entre os sexos masculino e feminino durante o HM
+
+#M x F hm anterior
+hm.anter <- as.table(rbind(c(2,80),c(93,149)))
+dimnames(hm.anter)<-list(sexo = c("f","m"),
+                        amostra = c("anterior","n total"))
+hm.anter
+
+fisher.test(hm.anter)
+
+#calculando frequências relativas
+
+fr.F <- 2/80
+fr.F
+fr.M <- 93/149
+fr.M
+```
+
+
+```{r}
+# Comparando traumas perimortem entre os sexos masculino e feminino durante o HM
+
+#M x F hm posterior
+
+hm.post <- as.table(rbind(c(32,149),c(14,80)))
+dimnames(hm.post)<-list(sexo = c("m","f"),
+                        amostra = c("posterior","n total"))
+hm.post
+
+fisher.test(hm.post)
+
+#calculando frequências relativas
+fr.M <- 32/149
+fr.M
+fr.F<- 14/80 
+fr.F
+```
+
+
+```{r}
+# Comparando traumas antimortem entre os sexos masculino e feminino durante o PIT
+
+#M x F pit antimortem
+
+pit.anti <- as.table(rbind(c(55,222),c(35,207)))
+dimnames(pit.anti)<-list(sexo = c("m","f"),
+                        amostra = c("antimortem","n total"))
+pit.anti
+
+fisher.test(pit.anti)
+
+#calculando frequências relativas
+fr.M <- 55/222
+fr.M
+fr.F <- 35/207
+fr.F
+```
+
+```{r}
+# Comparando traumas antimortem entre os sexos masculino e feminino durante o PIT
+
+#M x F pit antimortem
+
+pit.anti <- as.table(rbind(c(55,222),c(35,207)))
+dimnames(pit.anti)<-list(sexo = c("m","f"),
+                        amostra = c("antimortem","n total"))
+pit.anti
+
+fisher.test(pit.anti)
+
+#calculando frequências relativas
+fr.M <- 55/222
+fr.M
+fr.F <- 35/207
+fr.F
+```
+
+
+```{r}
+# Comparando traumas na região anterior do crânio entre os sexos masculino e feminino durante o PIT
+
+#M x F pit anterior
+pit.anter <- as.table(rbind(c(61,222),c(49,207)))
+dimnames(pit.anter)<-list(sexo = c("m","f"),
+                        amostra = c("anterior","n total"))
+pit.anter
+
+fisher.test(pit.anter)
+
+#calculando frequências relativas
+fr.M <- 61/222 
+fr.M
+fr.F <- 49/207
+fr.F
+```
+
+
+
+```{r}
+# Comparando traumas na região posterior do crânio entre os sexos masculino e feminino durante o PIT
+
+#M x F pit posterior
+
+pit.post <- as.table(rbind(c(30,222),c(30,207)))
+dimnames(pit.post)<-list(sexo = c("m","f"),
+                        amostra = c("posterior","n total"))
+pit.post
+
+fisher.test(pit.post)
+
+#calculando frequências relativas
+fr.M <- 30/222
+fr.M
+fr.F <-  30/207
+fr.F
+```
+
+
+```{r}
+# Comparando traumas antimortem no sexo masculino entre os períodos HM e PIT
+
+#Mhm x Mpit antimortem
+
+Mhm.pit.anti <- as.table(rbind(c(54,149),c(55,222)))
+dimnames(Mhm.pit.anti)<-list(grupo = c("Mhm","Mpit"),
+                        amostra = c("antimortem","n total"))
+Mhm.pit.anti
+
+fisher.test(Mhm.pit.anti)
+
+#calculando frequências relativas
+fr.Mhm <- 54/149
+fr.Mhm
+fr.Mpit <- 55/222
+fr.Mpit
+```
+
+Comparando traumas nos indivíduos masculinos entre os períodos
+
+```{r}
+# Comparando traumas perimortem no sexo masculino entre os períodos HM e PIT
+
+#Mhm x Mpit perimortem
+
+Mhm.pit.peri <- as.table(rbind(c(5,149),c(20,222)))
+dimnames(Mhm.pit.peri)<-list(grupo = c("Mhm","Mpit"),
+                        amostra = c("perimortem","n total"))
+Mhm.pit.peri
+
+fisher.test(Mhm.pit.peri)
+
+#calculando frequências relativas
+fr.Mhm <- 5/149
+fr.Mhm
+fr.Mpit <- 20/222
+fr.Mpit
+
+```
+
+```{r}
+# Comparando traumas na região anterior do crânio no sexo masculino entre os períodos HM e PIT
+
+#Mhm x Mpit anterior
+
+
+Mhm.pit.anter <- as.table(rbind(c(93,149),c(61,222)))
+dimnames(Mhm.pit.anter)<-list(grupo = c("Mhm","Mpit"),
+                        amostra = c("anterior","n total"))
+Mhm.pit.anter
+
+fisher.test(Mhm.pit.anter)
+
+#calculando frequências relativas
+fr.Mhm <- 93/149
+fr.Mhm
+fr.Mpit <- 61/222
+fr.Mpit
+```
+
+```{r}
+# Comparando traumas na região posterior do crânio no sexo masculino entre os períodos HM e PIT
+
+#Mhm x Mpit posterior
+
+Mhm.pit.post <- as.table(rbind(c(32,149),c(30,222)))
+dimnames(Mhm.pit.post)<-list(grupo = c("Mhm","Mpit"),
+                        amostra = c("posterior","n total"))
+Mhm.pit.post
+
+fisher.test(Mhm.pit.post)
+
+#calculando frequências relativas
+fr.Mhm <- 32/149
+fr.Mhm
+fr.Mpit <- 30/222
+fr.Mpit
+```
+
+```{r}
+# Comparando traumas antimortem no sexo feminino entre os períodos HM e PIT
+
+#Fhm x Fpit antimortem
+
+Fhm.pit.anti <- as.table(rbind(c(6,80),c(35,207)))
+dimnames(Fhm.pit.anti)<-list(grupo = c("Fhm","Fpit"),
+                        amostra = c("antimortem","n total"))
+Fhm.pit.anti
+
+fisher.test(Fhm.pit.anti)
+
+#calculando frequências relativas
+fr.Fhm <- 6/80
+fr.Fhm
+fr.Fpit <- 35/207
+fr.Fpit
+```
+
+```{r}
+# Comparando traumas na região posterior no sexo feminino entre os períodos HM e PIT
+
+#Fhm x Fpit posterior
+
+Fhm.pit.post <- as.table(rbind(c(14,80),c(30,207)))
+dimnames(Fhm.pit.post)<-list(grupo = c("Fhm","Fpit"),
+                        amostra = c("posterior","n total"))
+Fhm.pit.post
+
+fisher.test(Fhm.pit.post)
+
+#calculando frequências relativas
+fr.Fhm <- 14/80
+fr.Fhm
+fr.Fpit <- 30/207
+fr.Fpit
+
+
+```
+
+```{r}
+# Comparando traumas na região anterior no sexo feminino  entre os períodos HM e PIT
+
+#Fhm x Fpit anterior
+
+Fhm.pit.anter <- as.table(rbind(c(2,80),c(49,207)))
+dimnames(Fhm.pit.anter)<-list(grupo = c("Fhm","Fpit"),
+                        amostra = c("posterior","n total"))
+Fhm.pit.anter
+
+fisher.test(Fhm.pit.anter)
+
+#calculando frequências relativas
+fr.Fhm <- 2/80
+fr.Fhm
+fr.Fpit <- 49/207
+fr.Fpit
+```
+
+```{r}
+# Comparando traumas totais entre os períodos HM e PIT
+
+hm.pit <- as.table(rbind(c(136,326),c(251,479)))
+dimnames(hm.pit)<-list(grupo = c("hm","pit"),
+                        amostra = c("afetados","n total"))
+hm.pit
+
+fisher.test(hm.pit)
+
+```
+
+
