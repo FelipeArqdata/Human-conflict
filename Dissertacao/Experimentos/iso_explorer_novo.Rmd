@@ -1,0 +1,40 @@
+---
+title: "Iso explorer"
+author: "Felipe"
+date: '2022-07-27'
+output: word_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+suppressPackageStartupMessages(library(plyr)) 
+suppressPackageStartupMessages(library(dplyr))
+suppressPackageStartupMessages(library(tidyr))
+suppressPackageStartupMessages(library(stringr))
+suppressPackageStartupMessages(library(stringi))
+suppressPackageStartupMessages(library(tidyverse))
+suppressPackageStartupMessages(library(readr))
+suppressPackageStartupMessages(library(tibble))
+suppressPackageStartupMessages(library(ggplot2))
+```
+
+```{r}
+d.iso <- read.csv("data_iso_centrosul.csv",sep = ";")
+#names(d.iso)
+iso<- select(d.iso,data.media,C.b.coll.,N.b.coll.)
+names(iso)
+
+
+
+
+```
+
+```{r}
+ggplot(data=iso, aes(x=data.media, y= C.b.coll.)) +
+  geom_line()+
+  geom_point()
+```
+
